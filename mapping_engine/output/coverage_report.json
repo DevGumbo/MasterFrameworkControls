@@ -1,0 +1,3293 @@
+{
+  "summary": {
+    "total_controls": 407,
+    "valid_controls": 202,
+    "invalid_controls": 176,
+    "warnings": 29,
+    "coverage_percentage": 49.63,
+    "available_interrogators": 9
+  },
+  "invalid_controls": [
+    {
+      "control_id": "CT_RDS_PR_23",
+      "reason": "Check type \"publicly_accessible\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "publicly_accessible",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "IAM_788BA0",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_CC6A61",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_C95F10",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_33C686",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_642AF6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_C09BEC",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "IAM_CE7E42",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E65C20",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_854CB6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_380A74",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_3CCB7D",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_0C2682",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_A1206C",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C5044A",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_4FAEBA",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_B7DB5B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_70772D",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_93BD83",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_032C3A",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_7696BE",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_568DE7",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_57713A",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_25F20F",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_ECDC85",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_7C3081",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_D45CD8",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "AWS_4D174E",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_3B7B82",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_34EAF8",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_B92BEB",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_CB96B0",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_8B8457",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_7EBC9A",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_5F0B28",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_CB6BE4",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_DB36F7",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E7A5E6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_B65BB6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_61AFC0",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_AA543B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_940F4B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E0C735",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C4E578",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_73C2BE",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_3B781C",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_784677",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_1B4E8B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_F753A7",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_863686",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_67C465",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_6F9EC9",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_2FF375",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_00EC68",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_097780",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_4689D8",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_1AC607",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_04CFDA",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_C71031",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_502F24",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_72FBBE",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_A2475E",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_C71335",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_72552B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C9E546",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_746780",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C87152",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_7EA535",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_4F492B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_3F2971",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_CB2C19",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_123189",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_9B0506",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "AWS_1C2A79",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_956448",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_2B2372",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_142433",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_35DD03",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_86F466",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E6E1C6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_1209A8",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_9E5E1D",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_D5DE8F",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E6AC1E",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_01F7B8",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_34F4AB",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_0CDFEC",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_BE08DE",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_80FC33",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_E55588",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_BDA7F8",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_EECFCE",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_AE0608",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_CF0994",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_206124",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_3251C5",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_5B4AF5",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_EF3DA1",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_934A42",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_0CC22C",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_AB2076",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_ABD9F3",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_8A3DD1",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_1BD949",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_3EEA61",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C02667",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_D2F90B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_152C05",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_C5F96A",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_EDA26F",
+      "reason": "Check type \"enabled\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "enabled",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "EC2_898D97",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "EC2_1E5F22",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "EC2_768019",
+      "reason": "Check type \"default_sg_rules\" not found in NetworkSecurityInterrogator",
+      "severity": "high",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "default_sg_rules",
+      "available_check_types": [
+        "default_security_groups",
+        "security_group_ingress",
+        "nacl_rules"
+      ]
+    },
+    {
+      "control_id": "EC2_4C564F",
+      "reason": "Check type \"enabled\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "enabled",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "EC2_696496",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "EC2_189F15",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "AWS_873F94",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "EC2_80B3F9",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_BB6E11",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_47DBEC",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "AWS_61B099",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_8B0530",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_12304D",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "EC2_599F6C",
+      "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "CLOUDTRAIL_DB5269",
+      "reason": "Check type \"log_validation\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "log_validation",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "CLOUDTRAIL_522FDB",
+      "reason": "Check type \"multi_region\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "multi_region",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "CLOUDTRAIL_139A33",
+      "reason": "Check type \"log_validation\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "log_validation",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "CT.EC2.PR.4",
+      "reason": "Check type \"ingress_rules\" not found in NetworkSecurityInterrogator",
+      "severity": "high",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "default_security_groups",
+        "security_group_ingress",
+        "nacl_rules"
+      ]
+    },
+    {
+      "control_id": "CT.EC2.PV.3",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "CT.RDS.PR.23",
+      "reason": "Check type \"publicly_accessible\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "publicly_accessible",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "CT.S3.PV.5",
+      "reason": "Check type \"https_required\" not found in EncryptionConfigInterrogator",
+      "severity": "high",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": "https_required",
+      "available_check_types": [
+        "rds_encryption",
+        "s3_encryption",
+        "ebs_encryption"
+      ]
+    },
+    {
+      "control_id": "RDS_C72118",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "IAM_7F3FCD",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_87BE3C",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_A05492",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_CB3D60",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_4B7B0D",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_6293BA",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_97D768",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_84850A",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_ACF0B5",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_37BF1D",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_60FDAD",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_FF6775",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_0BF9C0",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_7CBCD1",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_51B18E",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_FC81A4",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_94CF74",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "RDS_0788D6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_39D629",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "CT_EC2_PR_4",
+      "reason": "Check type \"ingress_rules\" not found in NetworkSecurityInterrogator",
+      "severity": "high",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "ingress_rules",
+      "available_check_types": [
+        "default_security_groups",
+        "security_group_ingress",
+        "nacl_rules"
+      ]
+    },
+    {
+      "control_id": "CT_EC2_PV_3",
+      "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "public_sharing",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "ELB_6A9576",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_BEBE56",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_9539B1",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_FCAD56",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_9D5F82",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_AF834B",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "ELB_61FC27",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_1889D7",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_AAFC19",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_AF964E",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_1C7FB4",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_B603FE",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_92AC8C",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_CCA065",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_57F704",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_68CD44",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "S3_1E9D08",
+      "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+      "severity": "high",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": "block_public_access",
+      "available_check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ]
+    },
+    {
+      "control_id": "S3_6D3D27",
+      "reason": "Check type \"access_logging\" not found in LoggingConfigInterrogator",
+      "severity": "high",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": "access_logging",
+      "available_check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ]
+    },
+    {
+      "control_id": "AWS_17D702",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_0D9944",
+      "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+      "severity": "high",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": "aws_config_enabled",
+      "available_check_types": []
+    },
+    {
+      "control_id": "AWS_D063F6",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_FD6B1D",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    },
+    {
+      "control_id": "IAM_C5D4F9",
+      "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+      "severity": "high",
+      "interrogator": "ServiceConfigInterrogator",
+      "check_type": "general",
+      "available_check_types": []
+    }
+  ],
+  "warnings": [
+    {
+      "control_id": "AWS_B89B33",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "RDS_FEC5FE",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_84A313",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "EC2_A8D2BD",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_59619F",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_DE3C7C",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_305CC5",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_9BCFBE",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_AAF660",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_F70C90",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_FC7F61",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_1C23DC",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_71703D",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_178E37",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_7A1628",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_F67CF8",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_CB1B83",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_242DEA",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_AA8877",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_09072A",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_9DA67F",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_3F8C41",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "EC2_7384FE",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "EC2_87B1F4",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "EC2_639A3C",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "EC2_AA7495",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "AWS_353A91",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "CT_LAMBDA_PV_1",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    },
+    {
+      "control_id": "KMS_D8D9FE",
+      "type": "missing_parameter",
+      "parameter": "resource_type",
+      "severity": "medium"
+    }
+  ],
+  "invalid_by_reason": {
+    "Check type \"publicly_accessible\" not found in ResourcePublicAccessInterrogator": [
+      {
+        "control_id": "CT_RDS_PR_23",
+        "reason": "Check type \"publicly_accessible\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "publicly_accessible",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "CT.RDS.PR.23",
+        "reason": "Check type \"publicly_accessible\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "publicly_accessible",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      }
+    ],
+    "Check type \"general\" not found in ServiceConfigInterrogator": [
+      {
+        "control_id": "IAM_788BA0",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_CC6A61",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_C95F10",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_33C686",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_642AF6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_CE7E42",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E65C20",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_854CB6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_380A74",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_3CCB7D",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_0C2682",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_A1206C",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C5044A",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_4FAEBA",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_B7DB5B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_70772D",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_93BD83",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_032C3A",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_568DE7",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_57713A",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_25F20F",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_ECDC85",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_7C3081",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_4D174E",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_3B7B82",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_34EAF8",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_7EBC9A",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_5F0B28",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_CB6BE4",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_DB36F7",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E7A5E6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_B65BB6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_61AFC0",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_AA543B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_940F4B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C4E578",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_73C2BE",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_3B781C",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_784677",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_1B4E8B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_F753A7",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_097780",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "S3_4689D8",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_1AC607",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_04CFDA",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_C71031",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_502F24",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_72FBBE",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_A2475E",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_C71335",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_72552B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C9E546",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_746780",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C87152",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_7EA535",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_4F492B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_3F2971",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_CB2C19",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_123189",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_1C2A79",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_956448",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_2B2372",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_35DD03",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_86F466",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E6E1C6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_1209A8",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_9E5E1D",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_D5DE8F",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E6AC1E",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_01F7B8",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_34F4AB",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_0CDFEC",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_BE08DE",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_80FC33",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E55588",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_BDA7F8",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_EECFCE",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_AE0608",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_CF0994",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_206124",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_3251C5",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_5B4AF5",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_EF3DA1",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_0CC22C",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_AB2076",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_ABD9F3",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_8A3DD1",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_1BD949",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_3EEA61",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C02667",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_D2F90B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_152C05",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_C5F96A",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_80B3F9",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_BB6E11",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_61B099",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_8B0530",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "EC2_12304D",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_87BE3C",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_CB3D60",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_60FDAD",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_FF6775",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_0BF9C0",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_7CBCD1",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_94CF74",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_0788D6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_39D629",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_BEBE56",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_9D5F82",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_AF834B",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_61FC27",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "S3_68CD44",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_D063F6",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_FD6B1D",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_C5D4F9",
+        "reason": "Check type \"general\" not found in ServiceConfigInterrogator",
+        "severity": "high",
+        "interrogator": "ServiceConfigInterrogator",
+        "check_type": "general",
+        "available_check_types": []
+      }
+    ],
+    "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator": [
+      {
+        "control_id": "S3_C09BEC",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_1889D7",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_AAFC19",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_AF964E",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_B603FE",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_92AC8C",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_57F704",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "S3_1E9D08",
+        "reason": "Check type \"block_public_access\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "block_public_access",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      }
+    ],
+    "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator": [
+      {
+        "control_id": "EC2_7696BE",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_B92BEB",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_CB96B0",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_8B8457",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_E0C735",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_863686",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_67C465",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_6F9EC9",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_2FF375",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_00EC68",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_142433",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_934A42",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_7F3FCD",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "IAM_A05492",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_4B7B0D",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_6293BA",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_97D768",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_84850A",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_ACF0B5",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_37BF1D",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_51B18E",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "RDS_FC81A4",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_6A9576",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "ELB_9539B1",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_FCAD56",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "S3_1C7FB4",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "S3_CCA065",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_17D702",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      },
+      {
+        "control_id": "AWS_0D9944",
+        "reason": "Check type \"aws_config_enabled\" not found in ComplianceMonitoringInterrogator",
+        "severity": "high",
+        "interrogator": "ComplianceMonitoringInterrogator",
+        "check_type": "aws_config_enabled",
+        "available_check_types": []
+      }
+    ],
+    "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator": [
+      {
+        "control_id": "AWS_D45CD8",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "AWS_9B0506",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "AWS_873F94",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "CT.EC2.PV.3",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "RDS_C72118",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "CT_EC2_PV_3",
+        "reason": "Check type \"public_sharing\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "public_sharing",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      }
+    ],
+    "Check type \"enabled\" not found in LoggingConfigInterrogator": [
+      {
+        "control_id": "EC2_EDA26F",
+        "reason": "Check type \"enabled\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "enabled",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      },
+      {
+        "control_id": "EC2_4C564F",
+        "reason": "Check type \"enabled\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "enabled",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      }
+    ],
+    "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator": [
+      {
+        "control_id": "EC2_898D97",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "EC2_1E5F22",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "EC2_696496",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "EC2_189F15",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "EC2_47DBEC",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      },
+      {
+        "control_id": "EC2_599F6C",
+        "reason": "Check type \"ingress_rules\" not found in ResourcePublicAccessInterrogator",
+        "severity": "high",
+        "interrogator": "ResourcePublicAccessInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "s3_public_access",
+          "snapshot_public_access",
+          "rds_public_access"
+        ]
+      }
+    ],
+    "Check type \"default_sg_rules\" not found in NetworkSecurityInterrogator": [
+      {
+        "control_id": "EC2_768019",
+        "reason": "Check type \"default_sg_rules\" not found in NetworkSecurityInterrogator",
+        "severity": "high",
+        "interrogator": "NetworkSecurityInterrogator",
+        "check_type": "default_sg_rules",
+        "available_check_types": [
+          "default_security_groups",
+          "security_group_ingress",
+          "nacl_rules"
+        ]
+      }
+    ],
+    "Check type \"log_validation\" not found in LoggingConfigInterrogator": [
+      {
+        "control_id": "CLOUDTRAIL_DB5269",
+        "reason": "Check type \"log_validation\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "log_validation",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      },
+      {
+        "control_id": "CLOUDTRAIL_139A33",
+        "reason": "Check type \"log_validation\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "log_validation",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      }
+    ],
+    "Check type \"multi_region\" not found in LoggingConfigInterrogator": [
+      {
+        "control_id": "CLOUDTRAIL_522FDB",
+        "reason": "Check type \"multi_region\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "multi_region",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      }
+    ],
+    "Check type \"ingress_rules\" not found in NetworkSecurityInterrogator": [
+      {
+        "control_id": "CT.EC2.PR.4",
+        "reason": "Check type \"ingress_rules\" not found in NetworkSecurityInterrogator",
+        "severity": "high",
+        "interrogator": "NetworkSecurityInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "default_security_groups",
+          "security_group_ingress",
+          "nacl_rules"
+        ]
+      },
+      {
+        "control_id": "CT_EC2_PR_4",
+        "reason": "Check type \"ingress_rules\" not found in NetworkSecurityInterrogator",
+        "severity": "high",
+        "interrogator": "NetworkSecurityInterrogator",
+        "check_type": "ingress_rules",
+        "available_check_types": [
+          "default_security_groups",
+          "security_group_ingress",
+          "nacl_rules"
+        ]
+      }
+    ],
+    "Check type \"https_required\" not found in EncryptionConfigInterrogator": [
+      {
+        "control_id": "CT.S3.PV.5",
+        "reason": "Check type \"https_required\" not found in EncryptionConfigInterrogator",
+        "severity": "high",
+        "interrogator": "EncryptionConfigInterrogator",
+        "check_type": "https_required",
+        "available_check_types": [
+          "rds_encryption",
+          "s3_encryption",
+          "ebs_encryption"
+        ]
+      }
+    ],
+    "Check type \"access_logging\" not found in LoggingConfigInterrogator": [
+      {
+        "control_id": "S3_6D3D27",
+        "reason": "Check type \"access_logging\" not found in LoggingConfigInterrogator",
+        "severity": "high",
+        "interrogator": "LoggingConfigInterrogator",
+        "check_type": "access_logging",
+        "available_check_types": [
+          "cloudtrail_logging",
+          "vpc_flow_logs"
+        ]
+      }
+    ]
+  },
+  "missing_interrogators": [
+    "ComplianceMonitoringInterrogator",
+    "EncryptionConfigInterrogator",
+    "LoggingConfigInterrogator",
+    "NetworkSecurityInterrogator",
+    "ResourcePublicAccessInterrogator",
+    "ServiceConfigInterrogator"
+  ],
+  "interrogator_usage": {
+    "IAMPolicyInterrogator": 31,
+    "LoggingConfigInterrogator": 67,
+    "EncryptionConfigInterrogator": 77,
+    "ComplianceMonitoringInterrogator": 49,
+    "NetworkSecurityInterrogator": 17,
+    "ResourcePublicAccessInterrogator": 22,
+    "ServiceConfigInterrogator": 115
+  }
+}

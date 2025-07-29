@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-07-29T18:32:22.954019",
+  "pipeline_steps": [
+    "CSV Processing",
+    "Duplicate Analysis",
+    "Interrogator Mapping",
+    "Coverage Validation"
+  ],
+  "output_directory": "/Users/jonmiller/Documents/Projects/claude_inspection/MasterFrameworkControls/mapping_engine/output",
+  "fixes_applied": false
+}

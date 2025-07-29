@@ -1,0 +1,2888 @@
+{
+  "summary": {
+    "total_controls": 407,
+    "mapped_controls": 234,
+    "remapped_controls": 0,
+    "unmapped_controls": 0,
+    "interrogators_needing_methods": 5
+  },
+  "mapped_controls": [
+    {
+      "status": "mapped",
+      "control_id": "AWS_EFFB8F",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "access_key_rotation"
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A4025F",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_D763CF",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "access_key_rotation"
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_246404",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_11C80B",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_8B7F92",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_CD5B20",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_8525BB",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_E3CAE7",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_EC52C5",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_7744DD",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_61AF35",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_87BE8D",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_865AD7",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "access_key_rotation"
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_7BE2BC",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_C950B2",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_B89B33",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_4D2ED8",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_42BE69",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "access_key_rotation"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_AE247F",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_257380",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "access_key_rotation"
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_51FF13",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_B95FEE",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_FEC5FE",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_0128FE",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_7E7F8F",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_84A313",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_F8E158",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_154701",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_00B73A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_58AF7E",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_9B6453",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_D074E0",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_528BE3",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_03D5CB",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F64C74",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_A8D2BD",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_2607BE",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_37F1D6",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_FE33E2",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_74473E",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_466DCE",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_B91882",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_0427D6",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_59619F",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_8A4F1F",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_EE5F2B",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A04F79",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_9CBF98",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_FFC039",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_C4DDEC",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_96BB00",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_20E3B5",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_93B71B",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_39A65C",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_DC8645",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_937C4F",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_66FEB1",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_B181D9",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_DE3C7C",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_305CC5",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_AA2544",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_DD53CC",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_711312",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_4C2AF6",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_9BCFBE",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_C8C94A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_AAF660",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_4F0787",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A15C96",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F70C90",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_FC7F61",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A770D5",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F51379",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_DBC68B",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_1C23DC",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_6A31BC",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_6678A4",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_0B24DE",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_502370",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F90A07",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_3817C9",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_1B4D96",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_AE785C",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_1BB138",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_87FD0A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_A9D1C5",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_730CC4",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_8CCA2A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_71703D",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_9ABDC4",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_DD66A3",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_1BE750",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_EA3366",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_6CB0C1",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_08710D",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_178E37",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_655F1C",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_A87839",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A32257",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_2931CE",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F6EF57",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_7A1628",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_0E66E7",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_7F1E4E",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_526194",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_FC8CC4",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_8E3550",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_F67CF8",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_906D43",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_CB1B83",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_242DEA",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_D3BB31",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_AA8877",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_09072A",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_498D10",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_9DA67F",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_3F8C41",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_C97CF6",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_D67924",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_CCBDDF",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_4A7630",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_4A1833",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_71079D",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_E1ABF4",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_CE1DCF",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_7E68C7",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_2E46A2",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_A22DC9",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_768019",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "default_sg_rules"
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_6FDEFA",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_150141",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_7384FE",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_37124F",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_0C9085",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_A53CBA",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_87B1F4",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_2C1E99",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_998071",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_887BE6",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_639A3C",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A74EC1",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_A78F1F",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_889CBA",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_9F0D86",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_F36BAA",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_B3E960",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_482998",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_AA7495",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_830ED7",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_1C304D",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_9B882E",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_EE2AC6",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "EC2_B119E5",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CLOUDTRAIL_02C928",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CLOUDTRAIL_7C2F29",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CLOUDTRAIL_87E4F8",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CLOUDTRAIL_755228",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CLOUDTRAIL_DEB768",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT.EC2.PR.4",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "ingress_rules"
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_93A201",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_8F1723",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_4C1A95",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "MONITORING_29F3D9",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_B82885",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_39458A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_31DFB8",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_D1D14B",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_40D99D",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_A9786C",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_2978B0",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_39CF4E",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "RDS_7BA1F0",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_353A91",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_S3_PV_3",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_S3_PV_5",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_EC2_PR_4",
+      "interrogator": "NetworkSecurityInterrogator",
+      "check_type": "ingress_rules"
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_EC2_PV_2",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_KMS_PV_7",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "CT_LAMBDA_PV_1",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_D8629D",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_E54FE4",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_C5A512",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_58E22C",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_2DE9E7",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_35DE81",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_EE2C5A",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "ELB_AB735F",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_93BA53",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_7407FC",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_F8B186",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_910164",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_372DC1",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_1AA954",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_A1A08A",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_00CE8C",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_07E446",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_1E3C57",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "S3_407A45",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_C3C25B",
+      "interrogator": "ComplianceMonitoringInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_E4E7DA",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_3A50DA",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_D1E77D",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_709525",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_3C37A7",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "AWS_A4CE4C",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_15DC9F",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_15DDCD",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_6E9D11",
+      "interrogator": "LoggingConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_C6CE1F",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_1D223E",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_D79E03",
+      "interrogator": "EncryptionConfigInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "KMS_D8D9FE",
+      "interrogator": "ResourcePublicAccessInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_E6750C",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "password_reuse"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_41D1BE",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "password_expiry"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_E58EBE",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_8D5F0A",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_6907F4",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_5A38D2",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_735833",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_BA9889",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_408423",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_6BF701",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "password_length"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_6AEBA5",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_3FD1F3",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_E3E8B5",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_A1389A",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "password_length"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_D7BD71",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_BA15D1",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_73B581",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_C29F90",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_1E398B",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": "mfa_enabled"
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_77F95D",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    },
+    {
+      "status": "mapped",
+      "control_id": "IAM_90EEA1",
+      "interrogator": "IAMPolicyInterrogator",
+      "check_type": ""
+    }
+  ],
+  "remapped_controls": [],
+  "unmapped_controls": [],
+  "new_methods_needed": {
+    "ResourcePublicAccessInterrogator": [
+      {
+        "status": "needs_new_method",
+        "control_id": "CT_RDS_PR_23",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "publicly_accessible",
+        "reason": "Check type 'publicly_accessible' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_C09BEC",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_D45CD8",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_9B0506",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_898D97",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_1E5F22",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_696496",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_189F15",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_873F94",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_47DBEC",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_599F6C",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "ingress_rules",
+        "reason": "Check type 'ingress_rules' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CT.EC2.PV.3",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CT.RDS.PR.23",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "publicly_accessible",
+        "reason": "Check type 'publicly_accessible' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_C72118",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CT_EC2_PV_3",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "public_sharing",
+        "reason": "Check type 'public_sharing' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_1889D7",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_AAFC19",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_AF964E",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_B603FE",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_92AC8C",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_57F704",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_1E9D08",
+        "current_interrogator": "ResourcePublicAccessInterrogator",
+        "suggested_interrogator": "ResourcePublicAccessInterrogator",
+        "needed_check_type": "block_public_access",
+        "reason": "Check type 'block_public_access' not found in interrogator"
+      }
+    ],
+    "ServiceConfigInterrogator": [
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_788BA0",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_CC6A61",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_C95F10",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_33C686",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_642AF6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_CE7E42",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E65C20",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_854CB6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_380A74",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_3CCB7D",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_0C2682",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_A1206C",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C5044A",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_4FAEBA",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_B7DB5B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_70772D",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_93BD83",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_032C3A",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_568DE7",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_57713A",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_25F20F",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_ECDC85",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_7C3081",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_4D174E",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_3B7B82",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_34EAF8",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_7EBC9A",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_5F0B28",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_CB6BE4",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_DB36F7",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E7A5E6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_B65BB6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_61AFC0",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_AA543B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_940F4B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C4E578",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_73C2BE",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_3B781C",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_784677",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_1B4E8B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_F753A7",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_097780",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_4689D8",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_1AC607",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_04CFDA",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_C71031",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_502F24",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_72FBBE",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_A2475E",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_C71335",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_72552B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C9E546",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_746780",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C87152",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_7EA535",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_4F492B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_3F2971",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_CB2C19",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_123189",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_1C2A79",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_956448",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_2B2372",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_35DD03",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_86F466",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E6E1C6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_1209A8",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_9E5E1D",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_D5DE8F",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E6AC1E",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_01F7B8",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_34F4AB",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_0CDFEC",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_BE08DE",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_80FC33",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E55588",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_BDA7F8",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_EECFCE",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_AE0608",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_CF0994",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_206124",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_3251C5",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_5B4AF5",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_EF3DA1",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_0CC22C",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_AB2076",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_ABD9F3",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_8A3DD1",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_1BD949",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_3EEA61",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C02667",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_D2F90B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_152C05",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_C5F96A",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_80B3F9",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_BB6E11",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_61B099",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_8B0530",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_12304D",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_87BE3C",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_CB3D60",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_60FDAD",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_FF6775",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_0BF9C0",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_7CBCD1",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_94CF74",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_0788D6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_39D629",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_BEBE56",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_9D5F82",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_AF834B",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_61FC27",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_68CD44",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_D063F6",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_FD6B1D",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_C5D4F9",
+        "current_interrogator": "ServiceConfigInterrogator",
+        "suggested_interrogator": "ServiceConfigInterrogator",
+        "needed_check_type": "general",
+        "reason": "Check type 'general' not found in interrogator"
+      }
+    ],
+    "ComplianceMonitoringInterrogator": [
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_7696BE",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_B92BEB",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_CB96B0",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_8B8457",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_E0C735",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_863686",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_67C465",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_6F9EC9",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_2FF375",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_00EC68",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_142433",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_934A42",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_7F3FCD",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "IAM_A05492",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_4B7B0D",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_6293BA",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_97D768",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_84850A",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_ACF0B5",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_37BF1D",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_51B18E",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "RDS_FC81A4",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_6A9576",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "ELB_9539B1",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_FCAD56",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_1C7FB4",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_CCA065",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_17D702",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "AWS_0D9944",
+        "current_interrogator": "ComplianceMonitoringInterrogator",
+        "suggested_interrogator": "ComplianceMonitoringInterrogator",
+        "needed_check_type": "aws_config_enabled",
+        "reason": "Check type 'aws_config_enabled' not found in interrogator"
+      }
+    ],
+    "LoggingConfigInterrogator": [
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_EDA26F",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "enabled",
+        "reason": "Check type 'enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "EC2_4C564F",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "enabled",
+        "reason": "Check type 'enabled' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CLOUDTRAIL_DB5269",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "log_validation",
+        "reason": "Check type 'log_validation' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CLOUDTRAIL_522FDB",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "multi_region",
+        "reason": "Check type 'multi_region' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "CLOUDTRAIL_139A33",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "log_validation",
+        "reason": "Check type 'log_validation' not found in interrogator"
+      },
+      {
+        "status": "needs_new_method",
+        "control_id": "S3_6D3D27",
+        "current_interrogator": "LoggingConfigInterrogator",
+        "suggested_interrogator": "LoggingConfigInterrogator",
+        "needed_check_type": "access_logging",
+        "reason": "Check type 'access_logging' not found in interrogator"
+      }
+    ],
+    "EncryptionConfigInterrogator": [
+      {
+        "status": "needs_new_method",
+        "control_id": "CT.S3.PV.5",
+        "current_interrogator": "EncryptionConfigInterrogator",
+        "suggested_interrogator": "EncryptionConfigInterrogator",
+        "needed_check_type": "https_required",
+        "reason": "Check type 'https_required' not found in interrogator"
+      }
+    ]
+  },
+  "available_interrogators": {
+    "IAMPolicyInterrogator": {
+      "file": "iam_policy_interrogator.py",
+      "check_types": [
+        "password_length",
+        "access_key_rotation",
+        "root_access_keys",
+        "password_expiry",
+        "password_reuse",
+        "mfa_enabled"
+      ],
+      "method_count": 11
+    },
+    "KMSPolicyInterrogator": {
+      "file": "kms_policy_interrogator.py",
+      "check_types": [
+        "org_restriction"
+      ],
+      "method_count": 5
+    },
+    "NetworkSecurityInterrogator": {
+      "file": "network_security_interrogator.py",
+      "check_types": [
+        "ingress_rules",
+        "nacl_rules",
+        "security_group_ingress",
+        "default_sg_rules",
+        "default_security_groups"
+      ],
+      "method_count": 8
+    },
+    "EncryptionConfigInterrogator": {
+      "file": "encryption_config_interrogator.py",
+      "check_types": [
+        "rds_encryption",
+        "s3_encryption",
+        "ebs_encryption"
+      ],
+      "method_count": 6
+    },
+    "ComplianceMonitoringInterrogator": {
+      "file": "compliance_monitoring_interrogator.py",
+      "check_types": [],
+      "method_count": 2
+    },
+    "ResourcePublicAccessInterrogator": {
+      "file": "resource_public_access_interrogator.py",
+      "check_types": [
+        "s3_public_access",
+        "snapshot_public_access",
+        "rds_public_access"
+      ],
+      "method_count": 8
+    },
+    "ServiceConfigInterrogator": {
+      "file": "service_config_interrogator.py",
+      "check_types": [],
+      "method_count": 2
+    },
+    "LoggingConfigInterrogator": {
+      "file": "logging_config_interrogator.py",
+      "check_types": [
+        "cloudtrail_logging",
+        "vpc_flow_logs"
+      ],
+      "method_count": 5
+    },
+    "S3PolicyInterrogator": {
+      "file": "s3_policy_interrogator.py",
+      "check_types": [
+        "tls_version"
+      ],
+      "method_count": 6
+    }
+  }
+}

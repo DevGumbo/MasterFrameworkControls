@@ -1,0 +1,1479 @@
+{
+  "summary": {
+    "total_controls": 407,
+    "duplicate_groups": 59,
+    "controls_with_duplicates": 140,
+    "conflicts_found": 3
+  },
+  "duplicate_groups": [
+    {
+      "controls": [
+        {
+          "control_id": "CT_RDS_PR_23",
+          "title": "Disallow public accessibility for RDS database instances",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "CT.RDS.PR.23",
+          "title": "Disallow public accessibility for RDS database instances",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "CT_RDS_PR_23"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_EFFB8F",
+          "title": "Ensure no root user access key exists",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "AWS_865AD7",
+          "title": "Ensure no 'root' user account access key exists",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_EFFB8F"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_C95F10",
+          "title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not created",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "IAM_33C686",
+          "title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not attached",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_C95F10"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_A4025F",
+          "title": "Ensure credentials unused for 90 days or greater are disabled",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "AWS_87BE8D",
+          "title": "Ensure credentials unused for 45 days or greater are disabled",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_4D2ED8",
+          "title": "IAM user credentials unused for 45 days should be removed",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_A4025F"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_11C80B",
+          "title": "Ensure a log metric filter and alarm exist for unauthorized API calls",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_E3CAE7",
+          "title": "Ensure a log metric filter and alarm exist for usage of root user",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "IAM_EC52C5",
+          "title": "Ensure a log metric filter and alarm exist for IAM policy changes",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "S3_7407FC",
+          "title": "Ensure a log metric filter and alarm exist for S3 bucket policy changes",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_EC52C5"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_7744DD",
+          "title": "Ensure a log metric filter and alarm exist for AWS Management Console authentication failures",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "MONITORING_61AF35",
+          "title": "Ensure a log metric filter and alarm exist for AWS Config configuration changes",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_7744DD"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_7BE2BC",
+          "title": "Ensure EBS volume encryption is enabled",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_51FF13",
+          "title": "EBS default encryption should be enabled",
+          "standards": [
+            "cis_v3_0",
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_51FF13"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_B89B33",
+          "title": "Ensure no Network ACLs allow ingress from 0.0.0.0/0 to remote server administration ports",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "AWS_84A313",
+          "title": "Network ACLs should not allow ingress from 0.0.0.0/0 to port 22 or port 3389",
+          "standards": [
+            "cis_v3_0",
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_84A313"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_D074E0",
+          "title": "AWS AppSync API caches should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_03D5CB",
+          "title": "AWS AppSync API caches should be encrypted in transit",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_D074E0"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_F64C74",
+          "title": "Athena workgroups should have logging enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_20E3B5",
+          "title": "DataSync tasks should have logging enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_F64C74"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_ECDC85",
+          "title": "DMS replication instances should have automatic minor version upgrade enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_7CBCD1",
+          "title": "RDS DB clusters should have automatic minor version upgrade enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_ECDC85"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_96BB00",
+          "title": "Firehose delivery streams should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_87FD0A",
+          "title": "Kinesis streams should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_96BB00"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_93B71B",
+          "title": "Amazon DocumentDB clusters should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_DD66A3",
+          "title": "Neptune DB clusters should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_0E66E7",
+          "title": "Redshift clusters should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_93A201",
+          "title": "RDS DB clusters should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_93B71B"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_D45CD8",
+          "title": "Amazon DocumentDB manual cluster snapshots should not be public",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "AWS_9B0506",
+          "title": "Neptune DB cluster snapshots should not be public",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_D45CD8"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "MONITORING_39A65C",
+          "title": "Amazon DocumentDB clusters should publish audit logs to CloudWatch Logs",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "MONITORING_8F1723",
+          "title": "Aurora MySQL DB clusters should publish audit logs to CloudWatch Logs",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "MONITORING_39A65C"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_4D174E",
+          "title": "Amazon DocumentDB clusters should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_34EAF8",
+          "title": "DynamoDB tables should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_1C2A79",
+          "title": "Neptune DB clusters should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_4D174E"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_AAF660",
+          "title": "EKS cluster endpoints should not be publicly accessible",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "KMS_D8D9FE",
+          "title": "KMS keys should not be publicly accessible",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_AAF660"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_A770D5",
+          "title": "Amazon EMR security configurations should have encryption at rest enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_F51379",
+          "title": "Amazon EMR security configurations should have encryption in transit enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_A770D5"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_DBC68B",
+          "title": "Elasticsearch domains should have encryption at-rest enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_08710D",
+          "title": "OpenSearch domains should have encryption at rest enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_DBC68B"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_1C23DC",
+          "title": "Elasticsearch domains should not be publicly accessible",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "AWS_178E37",
+          "title": "OpenSearch domains should not be publicly accessible",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_1C23DC"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_6A31BC",
+          "title": "Elasticsearch domains should encrypt data sent between nodes",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_655F1C",
+          "title": "OpenSearch domains should encrypt data sent between nodes",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_6A31BC"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "MONITORING_6678A4",
+          "title": "Elasticsearch domain error logging to CloudWatch Logs should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "MONITORING_A87839",
+          "title": "OpenSearch domain error logging to CloudWatch Logs should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "MONITORING_6678A4"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_502370",
+          "title": "Elasticsearch domains should have at least three data nodes",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "AWS_2931CE",
+          "title": "OpenSearch domains should have at least three data nodes",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_502370"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_F90A07",
+          "title": "Connections to Elasticsearch domains should be encrypted using the latest TLS security policy",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_F6EF57",
+          "title": "Connections to OpenSearch domains should be encrypted using the latest TLS security policy",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_F90A07"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_863686",
+          "title": "FSx for OpenZFS file systems should be configured to copy tags to backups and volumes",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "AWS_67C465",
+          "title": "FSx for Lustre file systems should be configured to copy tags to backups",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_863686"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_6F9EC9",
+          "title": "FSx for OpenZFS file systems should be configured for Multi-AZ deployment",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "AWS_2FF375",
+          "title": "FSx for NetApp ONTAP file systems should be configured for Multi-AZ deployment",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "AWS_00EC68",
+          "title": "FSx for Windows File Server file systems should be configured for Multi-AZ deployment",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_6F9EC9"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "S3_4689D8",
+          "title": "GuardDuty S3 Protection should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_502F24",
+          "title": "GuardDuty Lambda Protection should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "EC2_A2475E",
+          "title": "GuardDuty Malware Protection for EC2 should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_C71335",
+          "title": "GuardDuty RDS Protection should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "S3_4689D8"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_1AC607",
+          "title": "GuardDuty Runtime Monitoring should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "EC2_C71031",
+          "title": "GuardDuty EC2 Runtime Monitoring should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_1AC607"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "EC2_72552B",
+          "title": "Amazon Inspector EC2 scanning should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_C9E546",
+          "title": "Amazon Inspector ECR scanning should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_746780",
+          "title": "Amazon Inspector Lambda code scanning should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_C87152",
+          "title": "Amazon Inspector Lambda standard scanning should be enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "EC2_72552B"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_9ABDC4",
+          "title": "MSK connectors should have logging enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_4A1833",
+          "title": "Transfer Family connectors should have logging enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_9ABDC4"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_956448",
+          "title": "Neptune DB clusters should have automated backups enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_87BE3C",
+          "title": "RDS instances should have automatic backups enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_956448"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_142433",
+          "title": "Neptune DB clusters should be configured to copy tags to snapshots",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "AWS_6293BA",
+          "title": "Aurora DB clusters should be configured to copy tags to DB snapshots",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_142433"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_35DD03",
+          "title": "Network Firewall firewalls should have subnet change protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_D5DE8F",
+          "title": "Network Firewall firewalls should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_35DD03"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_E6E1C6",
+          "title": "The default stateless action for Network Firewall policies should be drop or forward for full packets",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_1209A8",
+          "title": "The default stateless action for Network Firewall policies should be drop or forward for fragmented packets",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_E6E1C6"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_80FC33",
+          "title": "Amazon Redshift clusters should not use the default Admin username",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_E55588",
+          "title": "Redshift clusters should not use the default database name",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_80FC33"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_242DEA",
+          "title": "SNS topic access policies should not allow public access",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "AWS_AA8877",
+          "title": "SQS queue access policies should not allow public access",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_242DEA"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_8A3DD1",
+          "title": "AWS WAF web ACLs should have at least one rule or rule group",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_C02667",
+          "title": "AWS WAF Classic Regional web ACLs should have at least one rule or rule group",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_C5F96A",
+          "title": "AWS WAF Classic global web ACLs should have at least one rule or rule group",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_8A3DD1"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_1BD949",
+          "title": "AWS WAF Classic Regional rules should have at least one condition",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_3EEA61",
+          "title": "AWS WAF Classic Regional rule groups should have at least one rule",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_D2F90B",
+          "title": "AWS WAF Classic global rules should have at least one condition",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_152C05",
+          "title": "AWS WAF Classic global rule groups should have at least one rule",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_1BD949"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "AWS_CE1DCF",
+          "title": "WorkSpaces user volumes should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "AWS_7E68C7",
+          "title": "WorkSpaces root volumes should be encrypted at rest",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "AWS_CE1DCF"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "EC2_EDA26F",
+          "title": "Ensure VPC flow logging is enabled in all VPCs",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "EC2_4C564F",
+          "title": "VPC flow logging should be enabled in all VPCs",
+          "standards": [
+            "cis_v3_0",
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "EC2_EDA26F"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "EC2_696496",
+          "title": "EC2 security groups should not allow ingress from 0.0.0.0/0 to remote server administration ports",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "EC2_189F15",
+          "title": "EC2 security groups should not allow ingress from ::/0 to remote server administration ports",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "EC2_696496"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "EC2_889CBA",
+          "title": "VPCs should be configured with an interface endpoint for ECR API",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        },
+        {
+          "control_id": "EC2_9F0D86",
+          "title": "VPCs should be configured with an interface endpoint for Docker Registry",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        },
+        {
+          "control_id": "EC2_F36BAA",
+          "title": "VPCs should be configured with an interface endpoint for Systems Manager",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        },
+        {
+          "control_id": "EC2_B3E960",
+          "title": "VPCs should be configured with an interface endpoint for Systems Manager Incident Manager Contacts",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        },
+        {
+          "control_id": "EC2_482998",
+          "title": "VPCs should be configured with an interface endpoint for Systems Manager Incident Manager",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        }
+      ],
+      "suggested_master": "EC2_889CBA"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "CLOUDTRAIL_DB5269",
+          "title": "Ensure CloudTrail log file validation is enabled",
+          "standards": [
+            "cis_v1_2",
+            "cis_v1_4"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "CLOUDTRAIL_139A33",
+          "title": "CloudTrail log file validation should be enabled",
+          "standards": [
+            "cis_v3_0",
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "CLOUDTRAIL_DB5269"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "CT.EC2.PR.4",
+          "title": "Disallow 0.0.0.0/0 source CIDR for high-risk EC2 security group ports",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        },
+        {
+          "control_id": "CT_EC2_PR_4",
+          "title": "Disallow 0.0.0.0/0 source CIDR for high-risk EC2 security group ports",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "NetworkSecurityInterrogator"
+        }
+      ],
+      "suggested_master": "CT.EC2.PR.4"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "CT.EC2.PV.3",
+          "title": "Disallow Amazon EBS snapshots from being publicly restorable",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "CT_EC2_PV_3",
+          "title": "Disallow Amazon EBS snapshots from being publicly restorable",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "CT.EC2.PV.3"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "CT.S3.PV.5",
+          "title": "Require encryption in transit for Amazon S3 access",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "CT_S3_PV_5",
+          "title": "Require encryption in transit for Amazon S3 access",
+          "standards": [
+            "control_tower"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "CT.S3.PV.5"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_7F3FCD",
+          "title": "IAM authentication should be configured for RDS instances",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "IAM_A05492",
+          "title": "IAM authentication should be configured for RDS clusters",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_7F3FCD"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "RDS_84850A",
+          "title": "Existing RDS event notification subscriptions should be configured for critical cluster events",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "RDS_ACF0B5",
+          "title": "Existing RDS event notification subscriptions should be configured for critical database instance events",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "RDS_37BF1D",
+          "title": "An RDS event notifications subscription should be configured for critical database parameter group events",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "RDS_84850A"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "RDS_FF6775",
+          "title": "RDS Database Clusters should use a custom administrator username",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_0BF9C0",
+          "title": "RDS database instances should use a custom administrator username",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "RDS_FF6775"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "RDS_B82885",
+          "title": "RDS for PostgreSQL DB instances should be encrypted in transit",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_39458A",
+          "title": "RDS for MySQL DB instances should be encrypted in transit",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "EncryptionConfigInterrogator"
+        }
+      ],
+      "suggested_master": "RDS_B82885"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "RDS_D1D14B",
+          "title": "RDS for SQL Server DB instances should publish logs to CloudWatch Logs",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_A9786C",
+          "title": "RDS for MariaDB DB instances should publish logs to CloudWatch Logs",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "RDS_D1D14B"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "RDS_94CF74",
+          "title": "RDS clusters should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        },
+        {
+          "control_id": "RDS_0788D6",
+          "title": "RDS DB instances should have deletion protection enabled",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ServiceConfigInterrogator"
+        }
+      ],
+      "suggested_master": "RDS_94CF74"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "ELB_6A9576",
+          "title": "Application Load Balancer should be configured with defensive or strictest desync mitigation mode",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        },
+        {
+          "control_id": "ELB_9539B1",
+          "title": "Classic Load Balancer should be configured with defensive or strictest desync mitigation mode",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ComplianceMonitoringInterrogator"
+        }
+      ],
+      "suggested_master": "ELB_6A9576"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "S3_372DC1",
+          "title": "S3 general purpose buckets should log object-level write events",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        },
+        {
+          "control_id": "S3_1AA954",
+          "title": "S3 general purpose buckets should log object-level read events",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "LoggingConfigInterrogator"
+        }
+      ],
+      "suggested_master": "S3_372DC1"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "S3_92AC8C",
+          "title": "S3 general purpose buckets should block public read access",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        },
+        {
+          "control_id": "S3_57F704",
+          "title": "S3 general purpose buckets should block public write access",
+          "standards": [
+            "fsbp"
+          ],
+          "interrogator": "ResourcePublicAccessInterrogator"
+        }
+      ],
+      "suggested_master": "S3_92AC8C"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_E58EBE",
+          "title": "Ensure MFA is enabled for the root user",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_8D5F0A",
+          "title": "Ensure hardware MFA is enabled for the root user",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_E3E8B5",
+          "title": "Ensure hardware MFA is enabled for the 'root' user account",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_C29F90",
+          "title": "Hardware MFA should be enabled for the root user",
+          "standards": [
+            "cis_v3_0",
+            "fsbp"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_C29F90"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_5A38D2",
+          "title": "Ensure IAM password policy requires at least one uppercase letter",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_735833",
+          "title": "Ensure IAM password policy requires at least one lowercase letter",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_BA9889",
+          "title": "Ensure IAM password policy requires at least one symbol",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_408423",
+          "title": "Ensure IAM password policy requires at least one number",
+          "standards": [
+            "cis_v1_2"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_5A38D2"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_6BF701",
+          "title": "Ensure IAM password policy requires minimum password length of 14 or greater",
+          "standards": [
+            "cis_v1_2",
+            "cis_v3_0"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_A1389A",
+          "title": "Ensure IAM password policy requires minimum length of 14 or greater",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_6BF701"
+    },
+    {
+      "controls": [
+        {
+          "control_id": "IAM_3FD1F3",
+          "title": "Ensure MFA is enabled for the 'root' user account",
+          "standards": [
+            "cis_v1_4"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        },
+        {
+          "control_id": "IAM_73B581",
+          "title": "MFA should be enabled for the root user",
+          "standards": [
+            "cis_v3_0"
+          ],
+          "interrogator": "IAMPolicyInterrogator"
+        }
+      ],
+      "suggested_master": "IAM_3FD1F3"
+    }
+  ],
+  "conflicts": [
+    {
+      "type": "severity_mismatch",
+      "controls": [
+        "AWS_4D174E",
+        "AWS_34EAF8",
+        "AWS_1C2A79"
+      ],
+      "severities": [
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    {
+      "type": "severity_mismatch",
+      "controls": [
+        "AWS_AAF660",
+        "KMS_D8D9FE"
+      ],
+      "severities": [
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    {
+      "type": "severity_mismatch",
+      "controls": [
+        "AWS_1AC607",
+        "EC2_C71031"
+      ],
+      "severities": [
+        "HIGH",
+        "MEDIUM"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Found 59 groups of duplicate controls. Consider consolidating these to use the same interrogator methods.",
+    "Severity mismatch for duplicate controls: ['MEDIUM', 'LOW']. Consider using the highest severity.",
+    "Severity mismatch for duplicate controls: ['HIGH', 'CRITICAL']. Consider using the highest severity.",
+    "Severity mismatch for duplicate controls: ['HIGH', 'MEDIUM']. Consider using the highest severity."
+  ]
+}
