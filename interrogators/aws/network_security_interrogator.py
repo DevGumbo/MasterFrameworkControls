@@ -35,10 +35,12 @@ class NetworkSecurityInterrogator(BaseInterrogator):
         # Route to appropriate check method
         if check_type == 'ingress_rules':
             return self._check_security_group_ingress(control_config, context)
-        elif check_type == 'default_sg_rules':
+        elif check_type == 'default_sg_rules' or check_type == 'default_security_groups':
             return self._check_default_security_groups(control_config, context)
         elif check_type == 'nacl_rules':
             return self._check_nacl_rules(control_config, context)
+        elif check_type == 'security_group_ingress':
+            return self._check_security_group_ingress(control_config, context)
         else:
             return InterrogationResult(
                 control_id=control_id,

@@ -65,7 +65,27 @@ class CSVProcessorV2:
             'SECRETSMANAGER': 'secretsmanager',
             'STEPFUNCTIONS': 'stepfunctions',
             'WAF': 'waf',
-            'WORKSPACES': 'workspaces'
+            'WORKSPACES': 'workspaces',
+            # Additional services from the "other" bucket
+            'ELASTICSEARCH': 'elasticsearch',
+            'ES': 'elasticsearch',
+            'ELASTICACHE': 'elasticache',
+            'ELASTICBEANSTALK': 'elasticbeanstalk',
+            'INSPECTOR': 'inspector',
+            'MQ': 'mq',
+            'MACIE': 'macie',
+            'NETWORKFIREWALL': 'networkfirewall',
+            'PCA': 'pca',
+            'PRIVATECA': 'pca',
+            'SSM': 'ssm',
+            'SERVICECATALOG': 'servicecatalog',
+            'TRANSFER': 'transfer',
+            'FIREHOSE': 'firehose',
+            'DATAFIREHOSE': 'firehose',
+            'DATASYNC': 'datasync',
+            'CONNECT': 'connect',
+            'ACCOUNT': 'account',
+            'MONITORING': 'monitoring'
         }
         
     def process_csv_files(self, csv_files: Dict[str, str]) -> Dict[str, Any]:
@@ -101,6 +121,10 @@ class CSVProcessorV2:
         """Process individual control with enhanced logic"""
         control_id = row['ControlId']
         title = row['Title']
+        
+        # Normalize Control Tower IDs (CT.RDS.PR.23 -> CT_RDS_PR_23)
+        if control_id.startswith('CT.'):
+            control_id = control_id.replace('.', '_')
         
         # Generate unique key based on control content
         control_key = self._generate_control_key(title, row['Description'])
