@@ -1,0 +1,151 @@
+{
+  "service": "kms",
+  "controls": [
+    {
+      "control_id": "KMS_15DC9F",
+      "title": "Ensure CloudTrail logs are encrypted at rest using KMS CMKs",
+      "description": "AWS Key Management Service (KMS) is a managed service that helps create and control the encryption keys used to encrypt account data, and uses Hardware Security Modules (HSMs) to protect the security of encryption keys. CloudTrail logs can be configured to leverage server side encryption (SSE) and KMS customer created master keys (CMK) to further protect CloudTrail logs. It is recommended that CloudTrail be configured to use SSE-KMS.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.7",
+          "severity": "MEDIUM"
+        },
+        "cis_v1_4": {
+          "control_id": "3.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_15DDCD",
+      "title": "Ensure rotation for customer created CMKs is enabled",
+      "description": "AWS Key Management Service (KMS) allows customers to rotate the backing key which is key material stored within the KMS which is tied to the key ID of the Customer Created customer master key (CMK). It is the backing key that is used to perform cryptographic operations such as encryption and decryption. It is recommended that CMK key rotation be enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.8",
+          "severity": "MEDIUM"
+        },
+        "cis_v1_4": {
+          "control_id": "3.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_6E9D11",
+      "title": "Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created CMKs",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for customer created CMKs which have changed state to disabled or scheduled deletion.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.7",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.7",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_C6CE1F",
+      "title": "IAM customer managed policies should not allow decryption actions on all KMS keys",
+      "description": "Checks whether the default version of IAM customer managed policies allow principals to use the AWS Key Management Service (KMS) decryption actions on all resources. This control fails if kms:Decrypt or kms:ReEncryptFrom actions are allowed on all KMS keys. The control evaluates both attached and unattached customer managed policies. It does not check inline policies or AWS managed policies.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "KMS.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_1D223E",
+      "title": "IAM principals should not have IAM inline policies that allow decryption actions on all KMS keys",
+      "description": "Checks whether the inline policies embedded in your IAM principals (Role/User/Group) allow the AWS Key Management Service (KMS) decryption actions on all KMS keys. This control fails if kms:Decrypt or kms:ReEncryptFrom actions are allowed on all KMS keys in an inline policy.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "KMS.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_D79E03",
+      "title": "AWS KMS keys should not be deleted unintentionally",
+      "description": "This control checks whether AWS Key Management Service (KMS) customer managed keys (CMK) are scheduled for deletion. The control fails if a KMS CMK is scheduled for deletion.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "KMS.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_D8D9FE",
+      "title": "KMS keys should not be publicly accessible",
+      "description": "This controls checks whether an AWS KMS key is publicly accessible. The control fails if the KMS key is publicly accessible.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "KMS.5",
+          "severity": "CRITICAL"
+        }
+      }
+    }
+  ]
+}

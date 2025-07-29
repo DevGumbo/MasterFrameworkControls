@@ -1,0 +1,41 @@
+{
+  "service": "lambda",
+  "controls": [
+    {
+      "control_id": "AWS_353A91",
+      "title": "Lambda function policies should prohibit public access",
+      "description": "This control checks whether the AWS Lambda function policy attached to the Lambda resource prohibits public access. If the Lambda function policy allows public access, the control fails.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Lambda.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_39D629",
+      "title": "Lambda functions should use supported runtimes",
+      "description": "This control checks whether Lambda function runtime settings match the expected values set for the supported runtimes in each language. The control fails if a Lambda function doesn't use a supported runtime.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Lambda.2",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

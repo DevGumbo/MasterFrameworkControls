@@ -1,0 +1,406 @@
+{
+  "service": "s3",
+  "controls": [
+    {
+      "control_id": "S3_1889D7",
+      "title": "Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible",
+      "description": "CloudTrail logs a record of every API call made in your account. These log files are stored in an S3 bucket. CIS recommends that the S3 bucket policy, or access control list (ACL), applied to the S3 bucket that CloudTrail logs to prevents public access to the CloudTrail logs. Allowing public access to CloudTrail log content might aid an adversary in identifying weaknesses in the affected account's use or configuration.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.3",
+          "severity": "CRITICAL"
+        },
+        "cis_v1_4": {
+          "control_id": "3.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_93BA53",
+      "title": "Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket",
+      "description": "S3 Bucket Access Logging generates a log that contains access records for each request made to your S3 bucket. An access log record contains details about the request, such as the request type, the resources specified in the request worked, and the time and date the request was processed. It is recommended that bucket access logging be enabled on the CloudTrail S3 bucket.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.6",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "3.6",
+          "severity": "LOW"
+        },
+        "cis_v3_0": {
+          "control_id": "3.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "S3_7407FC",
+      "title": "Ensure a log metric filter and alarm exist for S3 bucket policy changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for changes to S3 bucket policies.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.8",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.8",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "S3_F8B186",
+      "title": "Ensure S3 Bucket Policy is set to deny HTTP requests",
+      "description": "At the Amazon S3 bucket level, you can configure permissions through a bucket policy making the objects accessible only through HTTPS.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.1.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_AAFC19",
+      "title": "S3 Block Public Access setting should be enabled at the bucket-level",
+      "description": "This control checks if Amazon S3 buckets have bucket level public access blocks applied. This control fails if any of the bucket level settings are set to \"false\" public: ignorePublicAcls, blockPublicPolicy, blockPublicAcls, restrictPublicBuckets.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.1.5.2",
+          "severity": "HIGH"
+        },
+        "cis_v3_0": {
+          "control_id": "2.1.4.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "S3_910164",
+      "title": "S3 buckets should require requests to use Secure Socket Layer",
+      "description": "At the Amazon S3 bucket level, you can configure permissions through a bucket policy making the objects accessible only through HTTPS.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.1.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_372DC1",
+      "title": "S3 general purpose buckets should log object-level write events",
+      "description": "Enabling object-level logging will help you meet data compliance requirements within your organization, perform comprehensive security analysis, monitor specific patterns of user behavior in your AWS account or take immediate actions on any object-level API activity within your S3 Buckets using Amazon CloudWatch Events",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_1AA954",
+      "title": "S3 general purpose buckets should log object-level read events",
+      "description": "Enabling object-level logging will help you meet data compliance requirements within your organization, perform comprehensive security analysis, monitor specific patterns of user behavior in your AWS account or take immediate actions on any object-level API activity using Amazon CloudWatch Events.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_A1A08A",
+      "title": "CodeBuild Bitbucket source repository URLs should not contain sensitive credentials",
+      "description": "This control checks whether an AWS CodeBuild project Bitbucket source repository URL contains personal access tokens or a user name and password. The control fails if the Bitbucket source repository URL contains personal access tokens or a user name and password.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CodeBuild.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_AF964E",
+      "title": "S3 general purpose buckets should have block public access settings enabled",
+      "description": "This control checks whether the preceding Amazon S3 block public access settings are configured at the account level for an S3 general purpose bucket. The control fails if one or more of the block public access settings are set to false.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_00CE8C",
+      "title": "ACLs should not be used to manage user access to S3 general purpose buckets",
+      "description": "This control checks whether an Amazon S3 general purpose bucket provides user permissions with an access control list (ACL). The control fails if an ACL is configured for managing user access on the bucket.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_1C7FB4",
+      "title": "S3 general purpose buckets should have Lifecycle configurations",
+      "description": "This control checks whether an Amazon S3 general purpose bucket has a Lifecycle configuration. The control fails if the bucket doesn't have a Lifecycle configuration. You can provide custom values for one or more if the preceding parameters, the control passes only if the policy includes the specified storage class, deletion time, and transition time.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.13",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "S3_B603FE",
+      "title": "S3 access points should have block public access settings enabled",
+      "description": "This control checks whether an Amazon S3 access point has block public access settings enabled. The control fails if block public access settings aren't enabled for the access point.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.19",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_92AC8C",
+      "title": "S3 general purpose buckets should block public read access",
+      "description": "This control checks whether an Amazon S3 general purpose bucket permits public read access. It evaluates the block public access settings, the bucket policy, and the bucket access control list (ACL). The control fails if the bucket permits public read access.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_CCA065",
+      "title": "S3 directory buckets should have lifecycle configurations",
+      "description": "This control checks whether lifecycle rules are configured for an S3 directory bucket. The control fails if lifecycle rules aren't configured for the directory bucket, or a lifecycle rule for the bucket specifies expiration settings that don't match the parameter value that you optionally specify.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.25",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "S3_57F704",
+      "title": "S3 general purpose buckets should block public write access",
+      "description": "This control checks whether an Amazon S3 general purpose bucket permits public write access. It evaluates the block public access settings, the bucket policy, and the bucket access control list (ACL). The control fails if the bucket permits public write access.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_07E446",
+      "title": "S3 general purpose buckets should require requests to use SSL",
+      "description": "This control checks whether an Amazon S3 general purpose bucket has a policy that requires requests to use SSL. The control fails if the bucket policy doesn't require requests to use SSL.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_68CD44",
+      "title": "S3 general purpose bucket policies should restrict access to other AWS accounts",
+      "description": "This control checks whether an Amazon S3 general purpose bucket policy prevents principals from other AWS accounts from performing denied actions on resources in the S3 bucket. The control fails if the bucket policy allows one or more of the preceding actions for a principal in another AWS account.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.6",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "S3_1E9D08",
+      "title": "S3 general purpose buckets should block public access",
+      "description": "This control checks whether an Amazon S3 general purpose bucket blocks public access at the bucket level. The control fails if any of the following settings are set to false: ignorePublicAcls, blockPublicPolicy, blockPublicAcls, restrictPublicBuckets.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.8",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "S3_6D3D27",
+      "title": "S3 general purpose buckets should have server access logging enabled",
+      "description": "This control checks whether server access logging is enabled for an Amazon S3 general purpose bucket. The control fails if server access logging isn't enabled. When logging is enabled, Amazon S3 delivers access logs for a source bucket to a chosen target bucket. The target bucket must be in the same AWS Region as the source bucket and must not have a default retention period configured. The target logging bucket does not need to have server access logging enabled, and you should suppress findings for this bucket.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "s3",
+          "check_type": "access_logging"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "S3.9",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "service": "s3",
+  "controls": [
+    {
+      "control_id": "CT_S3_PV_3",
+      "title": "Require minimum TLS version 1.3 for Amazon S3 requests",
+      "description": "S3 bucket policies should deny requests using TLS versions less than 1.3",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "execute",
+        "parameters": {}
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.S3.PV.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "CT_S3_PV_5",
+      "title": "Require encryption in transit for Amazon S3 access",
+      "description": "S3 buckets should require HTTPS for all data transfers",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "execute",
+        "parameters": {
+          "encryption_type": "in_transit"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.S3.PV.5",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

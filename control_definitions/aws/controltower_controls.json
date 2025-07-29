@@ -1,0 +1,87 @@
+{
+  "service": "controltower",
+  "controls": [
+    {
+      "control_id": "CT.EC2.PR.4",
+      "title": "Disallow 0.0.0.0/0 source CIDR for high-risk EC2 security group ports",
+      "description": "Security groups should not allow unrestricted access to high-risk ports",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {
+          "check_type": "ingress_rules",
+          "ports": [22, 3389, 1433, 3306, 5432, 5984, 6379, 7000, 7001, 8020, 8086, 8888, 9042, 9160, 9200, 9300, 11211, 27017, 27018, 27019, 50070],
+          "source_cidr": "0.0.0.0/0"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.EC2.PR.4",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "CT.EC2.PV.3",
+      "title": "Disallow Amazon EBS snapshots from being publicly restorable",
+      "description": "EBS snapshots should not be publicly restorable",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.EC2.PV.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "CT.RDS.PR.23",
+      "title": "Disallow public accessibility for RDS database instances",
+      "description": "RDS instances should not be publicly accessible",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "RDSInstance",
+          "check_type": "publicly_accessible"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.RDS.PR.23",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "CT.S3.PV.5",
+      "title": "Require encryption in transit for Amazon S3 access",
+      "description": "S3 buckets should require HTTPS for all requests",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "encryption_type": "in_transit",
+          "check_type": "https_required"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.S3.PV.5",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

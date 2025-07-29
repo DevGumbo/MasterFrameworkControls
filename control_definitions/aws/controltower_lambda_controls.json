@@ -1,0 +1,22 @@
+{
+  "service": "lambda",
+  "controls": [
+    {
+      "control_id": "CT_LAMBDA_PV_1",
+      "title": "Require Lambda function URLs to use IAM-based authentication",
+      "description": "Lambda function URLs should not allow public unauthenticated access",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "execute",
+        "parameters": {}
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.LAMBDA.PV.1",
+          "severity": "HIGH"
+        }
+      }
+    }
+  ]
+}

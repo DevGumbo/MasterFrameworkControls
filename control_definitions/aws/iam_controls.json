@@ -1,0 +1,459 @@
+{
+  "service": "iam",
+  "controls": [
+    {
+      "control_id": "IAM_E6750C",
+      "title": "Ensure IAM password policy prevents password reuse",
+      "description": "IAM password policies can prevent the reuse of a given password by the same user. It is recommended that the password policy prevent the reuse of passwords.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "password_reuse"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.10",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "1.9",
+          "severity": "LOW"
+        },
+        "cis_v3_0": {
+          "control_id": "1.9",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_41D1BE",
+      "title": "Ensure IAM password policy expires passwords within 90 days or less",
+      "description": "IAM password policies can require passwords to be rotated or expired after a given number of days. It is recommended that the password policy expire passwords after 90 days or less.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "password_expiry",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.11",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_E58EBE",
+      "title": "Ensure MFA is enabled for the root user",
+      "description": "The root user is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password as well as for an authentication code from their AWS MFA device.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.13",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_8D5F0A",
+      "title": "Ensure hardware MFA is enabled for the root user",
+      "description": "The root user is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password as well as for an authentication code from their AWS MFA device. For Level 2, it is recommended that the root user be protected with a hardware MFA.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.14",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_6907F4",
+      "title": "Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password",
+      "description": "Multi-Factor Authentication (MFA) adds an extra layer of protection on top of a user name and password. It is recommended that MFA be enabled for all accounts that have a console password.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.2",
+          "severity": "MEDIUM"
+        },
+        "cis_v1_4": {
+          "control_id": "1.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_5A38D2",
+      "title": "Ensure IAM password policy requires at least one uppercase letter",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure passwords are comprised of different character sets. It is recommended that the password policy require at least one uppercase letter.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_735833",
+      "title": "Ensure IAM password policy requires at least one lowercase letter",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure passwords are comprised of different character sets. It is recommended that the password policy require at least one lowercase letter.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_BA9889",
+      "title": "Ensure IAM password policy requires at least one symbol",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure passwords are comprised of different character sets. It is recommended that the password policy require at least one symbol.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_408423",
+      "title": "Ensure IAM password policy requires at least one number",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure passwords are comprised of different character sets. It is recommended that the password policy require at least one number.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_6BF701",
+      "title": "Ensure IAM password policy requires minimum password length of 14 or greater",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure passwords are at least a given length. It is recommended that the password policy require a minimum password length 14.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "password_length",
+          "min_length": 14
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.9",
+          "severity": "MEDIUM"
+        },
+        "cis_v3_0": {
+          "control_id": "1.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_6AEBA5",
+      "title": "Ensure a log metric filter and alarm exist for Management Console sign-in without MFA",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for console logins that are not protected by multi-factor authentication (MFA).",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.2",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_3FD1F3",
+      "title": "Ensure MFA is enabled for the 'root' user account",
+      "description": "The 'root' user account is the most privileged user in an AWS account. Multi-factor Authentication (MFA) adds an extra layer of protection on top of a username and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their username and password as well as for an authentication code from their AWS MFA device. **Note:** When virtual MFA is used for 'root' accounts, it is recommended that the device used is NOT a personal device, but rather a dedicated mobile device (tablet or phone) that is managed to be kept charged and secured independent of any individual personal devices. (\"non-personal virtual MFA\") This lessens the risks of losing access to the MFA due to device loss, device trade-in or if the individual owning the device is no longer employed at the company.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.5",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_E3E8B5",
+      "title": "Ensure hardware MFA is enabled for the 'root' user account",
+      "description": "The root user account is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password as well as for an authentication code from their AWS MFA device. For Level 2, it is recommended that the root user account be protected with a hardware MFA.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.6",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_A1389A",
+      "title": "Ensure IAM password policy requires minimum length of 14 or greater",
+      "description": "Password policies are, in part, used to enforce password complexity requirements. IAM password policies can be used to ensure password are at least a given length. It is recommended that the password policy require a minimum password length 14.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "password_length",
+          "min_length": 14
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_D7BD71",
+      "title": "Ensure MFA Delete is enabled on S3 buckets",
+      "description": "Once MFA Delete is enabled on your sensitive and classified S3 bucket it requires the user to have two forms of authentication.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.1.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_BA15D1",
+      "title": "MFA should be enabled for all IAM users that have a console password",
+      "description": "Multi-Factor Authentication (MFA) adds an extra layer of authentication assurance beyond traditional credentials. With MFA enabled, when a user signs in to the AWS Console, they will be prompted for their user name and password as well as for an authentication code from their physical or virtual MFA token. It is recommended that MFA be enabled for all accounts that have a console password.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.10",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "IAM.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_73B581",
+      "title": "MFA should be enabled for the root user",
+      "description": "The 'root' user account is the most privileged user in an AWS account. Multi-factor Authentication (MFA) adds an extra layer of protection on top of a username and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their username and password as well as for an authentication code from their AWS MFA device. **Note:** When virtual MFA is used for 'root' accounts, it is recommended that the device used is NOT a personal device, but rather a dedicated mobile device (tablet or phone) that is managed to be kept charged and secured independent of any individual personal devices. (\"non-personal virtual MFA\") This lessens the risks of losing access to the MFA due to device loss, device trade-in or if the individual owning the device is no longer employed at the company.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.5",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_C29F90",
+      "title": "Hardware MFA should be enabled for the root user",
+      "description": "The root user account is the most privileged user in an AWS account. MFA adds an extra layer of protection on top of a user name and password. With MFA enabled, when a user signs in to an AWS website, they will be prompted for their user name and password as well as for an authentication code from their AWS MFA device. For Level 2, it is recommended that the root user account be protected with a hardware MFA.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled",
+          "user_type": "root"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.6",
+          "severity": "CRITICAL"
+        },
+        "fsbp": {
+          "control_id": "IAM.6",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_1E398B",
+      "title": "S3 general purpose buckets should have MFA delete enabled",
+      "description": "Once MFA Delete is enabled on your sensitive and classified S3 bucket it requires the user to have two forms of authentication.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "mfa_enabled"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.1.2",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_FD6B1D",
+      "title": "IAM policies should not allow full \"*\" administrative privileges",
+      "description": "This AWS control checks whether the default version of AWS Identity and Access Management (IAM) policies (also known as customer managed policies) do not have administrator access with a statement that has \"Effect\": \"Allow\" with \"Action\": \"*\" over \"Resource\": \"*\". It only checks for the Customer Managed Policies that you created, but not inline and AWS Managed Policies.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "IAM.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_C5D4F9",
+      "title": "IAM customer managed policies that you create should not allow wildcard actions for services",
+      "description": "This control checks whether the IAM identity-based custom policies have Allow statements that grant permissions for all actions on a service. The control fails if any policy statement includes \"Effect\": \"Allow\" with \"Action\": \"Service:*\".",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "IAM.21",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_77F95D",
+      "title": "Password policies for IAM users should have strong configurations",
+      "description": "This control checks whether the account password policy for IAM users uses strong configurations. The control fails if the password policy doesn't use strong configurations. Unless you provide custom parameter values, Security Hub uses the default values mentioned in the preceding table. The 'PasswordReusePrevention' and 'MaxPasswordAge' parameters have no default value, so if you exclude these parameters, Security Hub ignores number of password rotations and password age when evaluating this control.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "IAM.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_90EEA1",
+      "title": "Unused IAM user credentials should be removed",
+      "description": "This control checks whether your IAM users have passwords or active access keys that were not used within the previous 90 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "IAM.8",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

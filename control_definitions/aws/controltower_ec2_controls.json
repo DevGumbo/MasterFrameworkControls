@@ -1,0 +1,87 @@
+{
+  "service": "ec2",
+  "controls": [
+    {
+      "control_id": "CT_EC2_PR_4",
+      "title": "Disallow 0.0.0.0/0 source CIDR for high-risk EC2 security group ports",
+      "description": "Security groups should not allow unrestricted access to ports 22 3389 1433 3306 5432 5984 6379 7000 7001 8020 8086 8888 9042 9160 9200 9300 11211 27017 27018 27019 50070",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "execute",
+        "parameters": {
+          "check_type": "ingress_rules",
+          "ports": [
+            22,
+            3389,
+            1433,
+            3306,
+            5432,
+            5984,
+            6379,
+            7000,
+            7001,
+            8020,
+            8086,
+            8888,
+            9042,
+            9160,
+            9200,
+            9300,
+            11211,
+            27017,
+            27018,
+            27019,
+            50070
+          ],
+          "source_cidr": "0.0.0.0/0"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.EC2.PR.4",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "CT_EC2_PV_2",
+      "title": "Require encryption at rest for attached Amazon EBS volumes",
+      "description": "EBS volumes should be encrypted at rest using AWS KMS",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "execute",
+        "parameters": {
+          "encryption_type": "at_rest"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.EC2.PV.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "CT_EC2_PV_3",
+      "title": "Disallow Amazon EBS snapshots from being publicly restorable",
+      "description": "EBS snapshots should not be publicly restorable by all AWS accounts",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "execute",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.EC2.PV.3",
+          "severity": "CRITICAL"
+        }
+      }
+    }
+  ]
+}

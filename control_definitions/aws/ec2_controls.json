@@ -1,0 +1,777 @@
+{
+  "service": "ec2",
+  "controls": [
+    {
+      "control_id": "EC2_EDA26F",
+      "title": "Ensure VPC flow logging is enabled in all VPCs",
+      "description": "VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. After you've created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs. It is recommended that VPC Flow Logs be enabled for packet \"Rejects\" for VPCs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "vpc_flow_logs",
+          "check_type": "enabled"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.9",
+          "severity": "MEDIUM"
+        },
+        "cis_v1_4": {
+          "control_id": "3.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_2E46A2",
+      "title": "Ensure a log metric filter and alarm exist for security group changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. Security Groups are a stateful packet filter that controls ingress and egress traffic within a VPC. It is recommended that a metric filter and alarm be established changes to Security Groups.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.10",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.10",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_A22DC9",
+      "title": "Ensure a log metric filter and alarm exist for VPC changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is possible to have more than 1 VPC within an account, in addition it is also possible to create a peer connection between 2 VPCs enabling network traffic to route between VPCs. It is recommended that a metric filter and alarm be established for changes made to VPCs.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.14",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.14",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_898D97",
+      "title": "Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 22",
+      "description": "Security groups provide stateful filtering of ingress/egress network traffic to AWS resources. It is recommended that no security group allows unrestricted ingress access to port 22.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules",
+          "ports": [
+            22
+          ]
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.4.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_1E5F22",
+      "title": "Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 3389",
+      "description": "This control checks whether an Amazon EC2 security group allows ingress from \u20180.0.0.0/0\u2019 or \u2018::/0\u2019 to port 3389. The control fails if the security group allows ingress from \u20180.0.0.0/0\u2019 or \u2018::/0\u2019 to port 3389.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules",
+          "ports": [
+            3389
+          ]
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.4.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_768019",
+      "title": "Ensure the default security group of every VPC restricts all traffic",
+      "description": "A VPC comes with a default security group whose initial settings deny all inbound traffic, allow all outbound traffic, and allow all traffic between instances assigned to the security group. If you don't specify a security group when you launch an instance, the instance is automatically assigned to this default security group. It is recommended that the default security group restrict all traffic.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {
+          "check_type": "default_sg_rules"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.4.3",
+          "severity": "HIGH"
+        },
+        "cis_v1_4": {
+          "control_id": "5.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_4C564F",
+      "title": "VPC flow logging should be enabled in all VPCs",
+      "description": "VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. After you've created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs. It is recommended that VPC Flow Logs be enabled for packet \"Rejects\" for VPCs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "vpc_flow_logs",
+          "check_type": "enabled"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.7",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "EC2.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_696496",
+      "title": "EC2 security groups should not allow ingress from 0.0.0.0/0 to remote server administration ports",
+      "description": "Public access to remote server administration ports, such as 22 and 3389, increases resource attack surface and unnecessarily raises the risk of resource compromise.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "5.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_189F15",
+      "title": "EC2 security groups should not allow ingress from ::/0 to remote server administration ports",
+      "description": "Public access to remote server administration ports, such as 22 and 3389, increases resource attack surface and unnecessarily raises the risk of resource compromise.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "5.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_6FDEFA",
+      "title": "VPC default security groups should not allow inbound or outbound traffic",
+      "description": "A VPC comes with a default security group whose initial settings deny all inbound traffic, allow all outbound traffic, and allow all traffic between instances assigned to the security group. If you don't specify a security group when you launch an instance, the instance is automatically assigned to this default security group. Security groups provide stateful filtering of ingress/egress network traffic to AWS resources. It is recommended that the default security group restrict all traffic. The default VPC in every region should have its default security group updated to comply. Any newly created VPCs will automatically contain a default security group that will need remediation to comply with this recommendation. **NOTE:** When implementing this recommendation, VPC flow logging is invaluable in determining the least privilege port access required by systems to work properly because it can log all packet acceptances and rejections occurring under the current security groups. This dramatically reduces the primary barrier to least privilege engineering - discovering the minimum ports required by systems in the environment. Even if the VPC flow logging recommendation in this benchmark is not adopted as a permanent security measure, it should be used during any period of discovery and engineering for least privileged security groups.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "5.4",
+          "severity": "HIGH"
+        },
+        "fsbp": {
+          "control_id": "EC2.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_873F94",
+      "title": "EBS snapshots should not be publicly restorable",
+      "description": "This AWS control checks whether Amazon Elastic Block Store snapshots are not publicly restorable.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_150141",
+      "title": "Amazon EC2 should be configured to use VPC endpoints that are created for the Amazon EC2 service",
+      "description": "This control checks whether a service endpoint for Amazon EC2 is created for each VPC. The control fails if a VPC does not have a VPC endpoint created for the Amazon EC2 service.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_7384FE",
+      "title": "EC2 subnets should not automatically assign public IP addresses",
+      "description": "This control checks if the assignment of public IPs in Amazon Virtual Private Cloud (VPC) subnets have the MapPublicIpOnLaunch set to FALSE. The control will pass if the flag is set to FALSE.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.15",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_37124F",
+      "title": "Unused Network Access Control Lists should be removed",
+      "description": "This control checks to see if there are any NACLs (Network Access Control List) that are unused. The control will check the item configuration of the resource AWS::EC2::NetworkAcl and determine the relationships of the NACL.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.16",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_80B3F9",
+      "title": "EC2 instances should not use multiple ENIs",
+      "description": "This control checks to see if Amazon EC2 instance uses multiple ENI/EFA. This control will pass if single network adapters is used.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.17",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_0C9085",
+      "title": "EC2 launch templates should use Instance Metadata Service Version 2 (IMDSv2)",
+      "description": "This control checks whether an Amazon EC2 launch template is configured with Instance Metadata Service Version 2 (IMDSv2). The control fails if HttpTokens is set to optional.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.170",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_A53CBA",
+      "title": "EC2 VPN connections should have logging enabled",
+      "description": "This control checks whether an AWS Site-to-Site VPN connection has Amazon CloudWatch Logs enabled for both tunnels. The control fails if a Site-to-Site VPN connection doesn't have CloudWatch Logs enabled for both tunnels.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.171",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_87B1F4",
+      "title": "EC2 VPC Block Public Access settings should block internet gateway traffic",
+      "description": "This control checks whether Amazon EC2 VPC Block Public Access (BPA) settings are configured to block internet gateway traffic for all Amazon VPCs in the AWS account. The control fails if EC2 VPC BPA settings aren't configured to block internet gateway traffic. If the parameter `vpcBpaInternetGatewayBlockMode` is provided, the control passes only if the EC2 VPC BPA value for InternetGatewayBlockMode matches the parameter.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.172",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_2C1E99",
+      "title": "EC2 Spot Fleet requests with launch parameters should enable encryption for attached EBS volumes",
+      "description": "This control checks whether an Amazon EC2 Spot Fleet request that specifies launch parameters is configured to enable encryption for all Amazon Elastic Block Store (Amazon EBS) volumes attached to EC2 instances. The control fails if the Spot Fleet request specifies launch parameters and doesn't enable encryption for one or more EBS volumes specified in the request.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.173",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_998071",
+      "title": "Security groups should only allow unrestricted incoming traffic for authorized ports",
+      "description": "This control checks whether an Amazon EC2 security group permits unrestricted incoming traffic from unauthorized ports. The control status is determined as follows: If you use the default value for 'authorizedTcpPorts', the control fails if the security group permits unrestricted incoming traffic from any port other than ports 80 and 443; If you provide custom values for 'authorizedTcpPorts' or 'authorizedUdpPorts', the control fails if the security group permits unrestricted incoming traffic from any unlisted port; If no parameter is used, the control fails for any security group that has an unrestricted inbound traffic rule.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.18",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_BB6E11",
+      "title": "EC2 network interfaces should have source/destination checking enabled",
+      "description": "This control checks whether source/destination checking is enabled for an Amazon EC2 elastic network interface (ENI) that's managed by users. The control fails if source/destination checking is disabled for the user-managed ENI. This control checks only the following types of ENIs: 'lambda', 'aws_codestar_connections_managed', 'branch', 'efa', 'interface', and 'quicksight'.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.180",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_47DBEC",
+      "title": "Security groups should not allow unrestricted access to ports with high risk",
+      "description": "This control checks whether unrestricted incoming traffic for an Amazon EC2 security group is accessible to the specified ports [3389, 20, 23, 110, 143, 3306, 8080, 1433, 9200, 9300, 25, 445, 135, 21, 1434, 4333, 5432, 5500, 5601, 22, 3000, 5000, 8088, 8888] that are considered to be high risk. This control fails if any of the rules in a security group allow ingress traffic from '0.0.0.0/0' or '::/0' to those ports.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.19",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_61B099",
+      "title": "Both VPN tunnels for an AWS Site-to-Site VPN connection should be up",
+      "description": "This control checks that both VPN tunnels provided by AWS Site-to-Site VPN are in UP status. The control fails if one or both tunnels are in DOWN status.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.20",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_887BE6",
+      "title": "EC2 Transit Gateways should not automatically accept VPC attachment requests",
+      "description": "This control checks if EC2 Transit Gateways are automatically accepting shared VPC attachments requests. This control will fail for a Transit Gateway that automatically accept shared VPC attachment requests.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.23",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_8B0530",
+      "title": "EC2 paravirtual instance types should not be used",
+      "description": "This control checks whether the virtualization type of an EC2 instance is paravirtual. The control fails for an EC2 instance if \u2018virtualizationType\u2019 is set to \u2018paravirtual\u2019.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.24",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_639A3C",
+      "title": "EC2 launch templates should not assign public IPs to network interfaces",
+      "description": "This control checks if Amazon EC2 launch templates are configured to assign public IP addresses to network interfaces upon launch. The control fails if an EC2 launch template is configured to assign a public IP address to network interfaces or if there is at least one network interface that has a public IP address.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.25",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A74EC1",
+      "title": "Attached EBS volumes should be encrypted at-rest",
+      "description": "This AWS control checks whether the EBS volumes that are in an attached state are encrypted.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_12304D",
+      "title": "Stopped EC2 instances should be removed after a specified time period",
+      "description": "This control checks whether an Amazon EC2 instance has been stopped for longer than the allowed number of days. The control fails if an EC2 instance is stopped for longer than the maximum allowed time period. Unless you provide a custom parameter value for the maximum allowed time period, Security Hub uses a default value of 30 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_A78F1F",
+      "title": "EC2 Client VPN endpoints should have client connection logging enabled",
+      "description": "This control checks if an AWS Client VPN endpoint has client connection logging enabled. The control fails if the endpoint doesn't have client connection logging enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.51",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_889CBA",
+      "title": "VPCs should be configured with an interface endpoint for ECR API",
+      "description": "This control checks whether a virtual private cloud (VPC) that you manage has an interface VPC endpoint for ECR API. The control fails if the VPC doesn't have an interface VPC endpoint for ECR API. This control evaluates resources in a single account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.55",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_9F0D86",
+      "title": "VPCs should be configured with an interface endpoint for Docker Registry",
+      "description": "This control checks whether a virtual private cloud (VPC) that you manage has an interface VPC endpoint for Docker Registry. The control fails if the VPC doesn't have an interface VPC endpoint for Docker Registry. This control evaluates resources in a single account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.56",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_F36BAA",
+      "title": "VPCs should be configured with an interface endpoint for Systems Manager",
+      "description": "This control checks whether a virtual private cloud (VPC) that you manage has an interface VPC endpoint for Systems Manager. The control fails if the VPC doesn't have an interface VPC endpoint for Systems Manager. This control evaluates resources in a single account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.57",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_B3E960",
+      "title": "VPCs should be configured with an interface endpoint for Systems Manager Incident Manager Contacts",
+      "description": "This control checks whether a virtual private cloud (VPC) that you manage has an interface VPC endpoint for Systems Manager Incident Manager Contacts. The control fails if the VPC doesn't have an interface VPC endpoint for Systems Manager Incident Manager Contacts. This control evaluates resources in a single account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.58",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_482998",
+      "title": "VPCs should be configured with an interface endpoint for Systems Manager Incident Manager",
+      "description": "This control checks whether a virtual private cloud (VPC) that you manage has an interface VPC endpoint for Systems Manager Incident Manager. The control fails if the VPC doesn't have an interface VPC endpoint for Systems Manager Incident Manager. This control evaluates resources in a single account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.60",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_AA7495",
+      "title": "EC2 instances should not have a public IPv4 address",
+      "description": "This control checks whether EC2 instances have a public IP address. The control fails if the publicIp field is present in the EC2 instance configuration item. This control applies to IPv4 addresses only.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EC2.9",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_830ED7",
+      "title": "VPC Lambda functions should operate in multiple Availability Zones",
+      "description": "This control checks if an AWS Lambda function that connects to a virtual private cloud (VPC) operates in at least the specified number of Availability Zone (AZs). The control fails if the function doesn't operate in at least the specified number of AZs. Unless you provide a custom parameter value for the minimum number of AZs, Security Hub uses a default value of two AZs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Lambda.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_1C304D",
+      "title": "An RDS event notifications subscription should be configured for critical database security group events",
+      "description": "This control checks whether an Amazon RDS Event subscription for RDS security groups is configured to notify on event categories of both \"configuration change\" and \"failure\".",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.22",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_599F6C",
+      "title": "Redshift security groups should allow ingress on the cluster port only from restricted origins",
+      "description": "This control checks whether a security group associated with an Amazon Redshift cluster has ingress rules that permit access to the cluster port from the internet (0.0.0.0/0 or ::/0). The control fails if the security group ingress rules permit access to the cluster port from the internet.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "SecurityGroup",
+          "check_type": "ingress_rules"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.15",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_9B882E",
+      "title": "Redshift clusters should use enhanced VPC routing",
+      "description": "This control checks whether a Redshift cluster has EnhancedVpcRouting enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_EE2AC6",
+      "title": "Amazon Redshift Serverless workgroups should use enhanced VPC routing",
+      "description": "This control checks whether enhanced VPC routing is enabled for an Amazon Redshift Serverless workgroup. The control fails if enhanced VPC routing is disabled for the workgroup.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_B119E5",
+      "title": "SageMaker notebook instances should be launched in a custom VPC",
+      "description": "This control checks if an Amazon SageMaker notebook instance is launched within a custom VPC. The control fails if a SageMaker notebook instance is not launched within a custom VPC.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "NetworkSecurityInterrogator",
+        "method": "check_network_security",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.2",
+          "severity": "HIGH"
+        }
+      }
+    }
+  ]
+}

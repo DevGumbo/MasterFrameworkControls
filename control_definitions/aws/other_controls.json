@@ -1,0 +1,4459 @@
+{
+  "service": "other",
+  "controls": [
+    {
+      "control_id": "AWS_EFFB8F",
+      "title": "Ensure no root user access key exists",
+      "description": "The root user is the most privileged user in an AWS account. AWS Access Keys provide programmatic access to a given AWS account. It is recommended that all access keys associated with the root user be removed.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "access_key_rotation",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.12",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_788BA0",
+      "title": "Ensure IAM policies are attached only to groups or roles",
+      "description": "By default, IAM users, groups, and roles have no access to AWS resources. IAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended that IAM policies be applied directly to groups and roles but not users.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.16",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CC6A61",
+      "title": "Ensure a support role has been created to manage incidents with AWS Support",
+      "description": "AWS provides a support center that can be used for incident notification and response, as well as technical support and customer services. Create an IAM Role to allow authorized users to manage incidents with AWS Support.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.20",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "1.17",
+          "severity": "LOW"
+        },
+        "cis_v3_0": {
+          "control_id": "1.17",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_C95F10",
+      "title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not created",
+      "description": "IAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended and considered a standard security advice to grant least privilege\u2014that is, granting only the permissions required to perform a task. Determine what users need to do and then craft policies for them that let the users perform only those tasks, instead of allowing full administrative privileges.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.22",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A4025F",
+      "title": "Ensure credentials unused for 90 days or greater are disabled",
+      "description": "AWS IAM users can access AWS resources using different types of credentials, such as passwords or access keys. It is recommended that all credentials that have been unused in 90 or greater days be removed or deactivated.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D763CF",
+      "title": "Ensure access keys are rotated every 90 days or less",
+      "description": "Access keys consist of an access key ID and secret access key, which are used to sign programmatic requests that you make to AWS. It is recommended that all access keys be regularly rotated.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "access_key_rotation",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.1.4",
+          "severity": "MEDIUM"
+        },
+        "cis_v1_4": {
+          "control_id": "1.14",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_246404",
+      "title": "AWS Config should be enabled and use the service-linked role for resource recording",
+      "description": "AWS Config is a web service that performs configuration management of supported AWS resources within your account and delivers log files to you. The recorded information includes the configuration item (AWS resource), relationships between configuration items (AWS resources), and any configuration changes between resources. It is recommended to enable AWS Config in all regions.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.5",
+          "severity": "CRITICAL"
+        },
+        "cis_v1_4": {
+          "control_id": "3.5",
+          "severity": "CRITICAL"
+        },
+        "cis_v3_0": {
+          "control_id": "3.3",
+          "severity": "CRITICAL"
+        },
+        "fsbp": {
+          "control_id": "Config.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_11C80B",
+      "title": "Ensure a log metric filter and alarm exist for unauthorized API calls",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for unauthorized API calls.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.1",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8B7F92",
+      "title": "Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL)",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. NACLs are used as a stateless packet filter to control ingress and egress traffic for subnets within a VPC. It is recommended that a metric filter and alarm be established for changes made to NACLs.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.11",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.11",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CD5B20",
+      "title": "Ensure a log metric filter and alarm exist for changes to network gateways",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. Network gateways are required to send/receive traffic to a destination outside of a VPC. It is recommended that a metric filter and alarm be established for changes to network gateways.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.12",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.12",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8525BB",
+      "title": "Ensure a log metric filter and alarm exist for route table changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. Routing tables are used to route network traffic between subnets and to network gateways. It is recommended that a metric filter and alarm be established for changes to route tables.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.13",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.13",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E3CAE7",
+      "title": "Ensure a log metric filter and alarm exist for usage of root user",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for root login attempts.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_EC52C5",
+      "title": "Ensure a log metric filter and alarm exist for IAM policy changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established changes made to Identity and Access Management (IAM) policies.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.4",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7744DD",
+      "title": "Ensure a log metric filter and alarm exist for AWS Management Console authentication failures",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for failed console authentication attempts.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.6",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.6",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_61AF35",
+      "title": "Ensure a log metric filter and alarm exist for AWS Config configuration changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for detecting changes to CloudTrail's configurations.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.9",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.9",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_87BE8D",
+      "title": "Ensure credentials unused for 45 days or greater are disabled",
+      "description": "AWS IAM users can access AWS resources using different types of credentials, such as passwords or access keys. It is recommended that all credentials that have been unused in 45 or greater days be removed or deactivated.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_33C686",
+      "title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not attached",
+      "description": "IAM policies are the means by which privileges are granted to users, groups, or roles. It is recommended and considered a standard security advice to grant least privilege -that is, granting only the permissions required to perform a task. Determine what users need to do and then craft policies for them that let the users perform only those tasks, instead of allowing full administrative privileges.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.16",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_865AD7",
+      "title": "Ensure no 'root' user account access key exists",
+      "description": "The 'root' user account is the most privileged user in an AWS account. AWS Access Keys provide programmatic access to a given AWS account. It is recommended that all access keys associated with the 'root' user account be removed.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "access_key_rotation",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.4",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_642AF6",
+      "title": "Eliminate use of the 'root' user for administrative and daily tasks",
+      "description": "With the creation of an AWS account, a 'root user' is created that cannot be disabled or deleted. That user has unrestricted access to and control over all resources in the AWS account. It is highly recommended that the use of this account be avoided for everyday tasks.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "1.7",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "S3_C09BEC",
+      "title": "S3 Block Public Access setting should be enabled",
+      "description": "This AWS control checks whether the following public access block settings are configured from account level: ignorePublicAcls: True, blockPublicPolicy: True, blockPublicAcls: True, restrictPublicBuckets: True.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "S3Bucket",
+          "check_type": "block_public_access"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.1.5.1",
+          "severity": "MEDIUM"
+        },
+        "cis_v3_0": {
+          "control_id": "2.1.4.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7BE2BC",
+      "title": "Ensure EBS volume encryption is enabled",
+      "description": "Elastic Compute Cloud (EC2) supports encryption at rest when using the Elastic Block Store (EBS) service. While disabled by default, forcing encryption at EBS volume creation is supported.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.2.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_C950B2",
+      "title": "Ensure that encryption is enabled for RDS Instances",
+      "description": "Amazon RDS encrypted DB instances use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your Amazon RDS DB instances. After your data is encrypted, Amazon RDS handles authentication of access and decryption of your data transparently with a minimal impact on performance.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "2.3.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B89B33",
+      "title": "Ensure no Network ACLs allow ingress from 0.0.0.0/0 to remote server administration ports",
+      "description": "The Network Access Control List (NACL) function provide stateless filtering of ingress and egress network traffic to AWS resources. It is recommended that no NACL allows unrestricted ingress access to remote server administration ports, such as SSH to port 22 and RDP to port 3389.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v1_4": {
+          "control_id": "5.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_4D2ED8",
+      "title": "IAM user credentials unused for 45 days should be removed",
+      "description": "AWS IAM users can access AWS resources using different types of credentials, such as passwords or access keys. It is recommended that all credentials that have been unused in 45 or greater days be removed or deactivated.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_42BE69",
+      "title": "IAM users' access keys should be rotated every 90 days or less",
+      "description": "Access keys consist of an access key ID and secret access key, which are used to sign programmatic requests that you make to AWS. AWS users need their own access keys to make programmatic calls to AWS from the AWS Command Line Interface (AWS CLI), Tools for Windows PowerShell, the AWS SDKs, or direct HTTP calls using the APIs for individual AWS services. It is recommended that all access keys be regularly rotated.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "access_key_rotation",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.14",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "IAM.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_CE7E42",
+      "title": "IAM users should not have IAM policies attached",
+      "description": "Assigning IAM policy only through groups unifies permissions management to a single, flexible layer consistent with organizational functional roles. By unifying permissions management, the likelihood of excessive permissions is reduced.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.15",
+          "severity": "LOW"
+        },
+        "fsbp": {
+          "control_id": "IAM.2",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_AE247F",
+      "title": "Expired SSL/TLS certificates managed in IAM should be removed",
+      "description": "Removing expired SSL/TLS certificates eliminates the risk that an invalid certificate will be deployed accidentally to a resource such as AWS Elastic Load Balancer (ELB), which can damage the credibility of the application/website behind the ELB. As a best practice, it is recommended to delete expired certificates.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.19",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E65C20",
+      "title": "Security contact information should be provided for an AWS account.",
+      "description": "Ensure security contact email and telephone details for AWS accounts are current.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.2",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "Account.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_854CB6",
+      "title": "IAM Access Analyzer external access analyzer should be enabled",
+      "description": "AWS IAM Access Analyzer helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, that are shared with an external entity. This lets you identify unintended access to your resources and data.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.20",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_380A74",
+      "title": "IAM identities should not have the AWSCloudShellFullAccess policy attached",
+      "description": "Access to this policy should be restricted as it presents a potential channel for data exfiltration by malicious cloud admins that are given full permissions to the service.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.22",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_257380",
+      "title": "IAM root user access key should not exist",
+      "description": "The 'root' user account is the most privileged user in an AWS account. AWS Access Keys provide programmatic access to a given AWS account. It is recommended that all access keys associated with the 'root' user account be removed.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {
+          "check_type": "access_key_rotation",
+          "max_days": 90
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "1.4",
+          "severity": "CRITICAL"
+        },
+        "fsbp": {
+          "control_id": "IAM.4",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_51FF13",
+      "title": "EBS default encryption should be enabled",
+      "description": "Elastic Compute Cloud (EC2) supports encryption at rest when using the Elastic Block Store (EBS) service. While disabled by default, forcing encryption at EBS volume creation is supported.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.2.1",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "EC2.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_B95FEE",
+      "title": "RDS DB instances should have encryption at-rest enabled",
+      "description": "Amazon RDS encrypted DB instances use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your Amazon RDS DB instances. After your data is encrypted, Amazon RDS handles authentication of access and decryption of your data transparently with a minimal impact on performance.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.3.1",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "RDS.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_3CCB7D",
+      "title": "RDS automatic minor version upgrades should be enabled",
+      "description": "Ensure that RDS database instances have the Auto Minor Version Upgrade flag enabled in order to receive automatically minor engine upgrades during the specified maintenance window.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.3.2",
+          "severity": "HIGH"
+        },
+        "fsbp": {
+          "control_id": "RDS.13",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_FEC5FE",
+      "title": "RDS DB Instances should prohibit public access, as determined by the PubliclyAccessible configuration",
+      "description": "Ensure and verify that RDS database instances provisioned in your AWS account do restrict unauthorized access in order to minimize security risks. To restrict access to any publicly accessible RDS database instance, you must disable the database Publicly Accessible flag and update the VPC security group associated with the instance.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.3.3",
+          "severity": "CRITICAL"
+        },
+        "fsbp": {
+          "control_id": "RDS.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_0128FE",
+      "title": "Elastic File System should be configured to encrypt file data at-rest using AWS KMS",
+      "description": "EFS data should be encrypted at rest using AWS KMS (Key Management Service). Data should be encrypted at rest to reduce the risk of a data breach via direct access to the storage device.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "2.4.1",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "EFS.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "KMS_7E7F8F",
+      "title": "AWS KMS key rotation should be enabled",
+      "description": "AWS Key Management Service (KMS) allows customers to rotate the backing key which is key material stored within the KMS which is tied to the key ID of the Customer Created customer master key (CMK). It is the backing key that is used to perform cryptographic operations such as encryption and decryption. Automated key rotation currently retains all prior backing keys so that decryption of encrypted data can take place transparently. It is recommended that CMK key rotation be enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "customer_managed"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_84A313",
+      "title": "Network ACLs should not allow ingress from 0.0.0.0/0 to port 22 or port 3389",
+      "description": "The Network Access Control List (NACL) function provide stateless filtering of ingress and egress network traffic to AWS resources. It is recommended that no NACL allows unrestricted ingress access to remote server administration ports, such as SSH to port 22 and RDP to port 3389.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "5.1",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "EC2.21",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_F8E158",
+      "title": "EC2 instances should use Instance Metadata Service Version 2 (IMDSv2)",
+      "description": "Instance metadata is data about your instance that you can use to configure or manage the running instance. Allowing Version 1 of the service may open EC2 instances to Server-Side Request Forgery (SSRF) attacks, so Amazon recommends utilizing Version 2 for better instance security.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "5.6",
+          "severity": "HIGH"
+        },
+        "fsbp": {
+          "control_id": "EC2.8",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0C2682",
+      "title": "Imported and ACM-issued certificates should be renewed after a specified time period",
+      "description": "This control checks whether an AWS Certificate Manager (ACM) certificate is renewed within the specified time period. It checks both imported certificates and certificates provided by ACM. The control fails if the certificate isn't renewed within the specified time period. Unless you provide a custom parameter value for the renewal period, Security Hub uses a default value of 30 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ACM.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A1206C",
+      "title": "RSA certificates managed by ACM should use a key length of at least 2,048 bits",
+      "description": "This control checks whether RSA certificates managed by AWS Certificate Manager use a key length of at least 2,048 bits. The control fails if the key length is smaller than 2,048 bits.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ACM.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_154701",
+      "title": "API Gateway REST and WebSocket API execution logging should be enabled",
+      "description": "This control checks whether all stages of an Amazon API Gateway REST or WebSocket API have logging enabled. The control fails if the 'loggingLevel' isn't 'ERROR' or 'INFO' for all stages of the API. Unless you provide custom parameter values to indicate that a specific log type should be enabled, Security Hub produces a passed finding if the logging level is either 'ERROR' or 'INFO'.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_00B73A",
+      "title": "API Gateway REST API stages should be configured to use SSL certificates for backend authentication",
+      "description": "This control checks whether Amazon API Gateway REST API stages have SSL certificates configured that backend systems can use to authenticate that incoming requests are from the API Gateway.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C5044A",
+      "title": "API Gateway REST API stages should have AWS X-Ray tracing enabled",
+      "description": "This control checks whether AWS X-Ray active tracing is enabled for your Amazon API Gateway REST API stages.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4FAEBA",
+      "title": "API Gateway should be associated with a WAF Web ACL",
+      "description": "This control checks to see if an API Gateway stage is using an AWS WAF Web ACL. This control fails if an AWS WAF Web ACL is not attached to a REST API Gateway stage.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_58AF7E",
+      "title": "API Gateway REST API cache data should be encrypted at rest",
+      "description": "This control checks whether all methods in Amazon API Gateway REST API stages that have cache enabled are encrypted. The control fails if any method in API Gateway REST API stage is configured to cache and the cache is not encrypted.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B7DB5B",
+      "title": "API Gateway routes should specify an authorization type",
+      "description": "This control checks if Amazon API Gateway routes have an authorization type. The control fails if the API Gateway route doesn't have any authorization type. Optionally, you can provide a custom parameter value if you want the control to pass only if the route uses the authorization type specified in the 'authorizationType' parameter.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9B6453",
+      "title": "Access logging should be configured for API Gateway V2 Stages",
+      "description": "This control checks if Amazon API Gateway V2 stages have access logging configured. This control fails if access log settings aren\u2019t defined.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "APIGateway.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D074E0",
+      "title": "AWS AppSync API caches should be encrypted at rest",
+      "description": "This control checks whether an AWS AppSync API cache is encrypted at rest. The control fails if the API cache isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AppSync.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_528BE3",
+      "title": "AWS AppSync should have field-level logging enabled",
+      "description": "This control checks whether an AWS AppSync API has field-level logging turned on. The control fails if the field resolver log level is set to 'None'. Unless you provide custom parameter values to indicate that a specific log type should be enabled, Security Hub produces a passed finding if the field resolver log level is either 'ERROR' or 'ALL'.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AppSync.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_70772D",
+      "title": "AWS AppSync GraphQL APIs should not be authenticated with API keys",
+      "description": "This control checks whether your application uses an API key to interact with an AWS AppSync GraphQL API. The control fails if an AWS AppSync GraphQL API is authenticated with an API key.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AppSync.5",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_03D5CB",
+      "title": "AWS AppSync API caches should be encrypted in transit",
+      "description": "This control checks whether an AWS AppSync API cache is encrypted in transit. The control fails if the API cache isn't encrypted in transit.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AppSync.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F64C74",
+      "title": "Athena workgroups should have logging enabled",
+      "description": "This control checks whether an Amazon Athena workgroup has logging enabled. The control fails if the workgroup doesn't have logging enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Athena.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "ELB_93BD83",
+      "title": "Auto scaling groups associated with a load balancer should use ELB health checks",
+      "description": "This control checks whether an Amazon EC2 Auto Scaling group that is associated with a load balancer uses Elastic Load Balancing (ELB) health checks. The control fails if the Auto Scaling group doesn't use ELB health checks.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AutoScaling.1",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_032C3A",
+      "title": "Amazon EC2 Auto Scaling group should cover multiple Availability Zones",
+      "description": "This control checks whether an Amazon EC2 Auto Scaling group spans at least the specified number of Availability Zones (AZs). The control fails if an Auto Scaling group doesn't span at least the specified number of AZs. Unless you provide a custom parameter value for the minimum number of AZs, Security Hub uses a default value of two AZs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AutoScaling.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_7696BE",
+      "title": "Auto Scaling group launch configurations should configure EC2 instances to require Instance Metadata Service Version 2 (IMDSv2)",
+      "description": "This control checks whether IMDSv2 is enabled on all instances launched by Amazon EC2 Auto Scaling groups. The control fails if the Instance Metadata Service (IMDS) version isn't included in the launch configuration or is configured as token optional, which is a setting that allows either IMDSv1 or IMDSv2.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AutoScaling.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_568DE7",
+      "title": "Auto Scaling groups should use multiple instance types in multiple Availability Zones",
+      "description": "This control checks whether an Amazon EC2 Auto Scaling group uses multiple instance types. This control fails if the Amazon EC2 Auto Scaling group has only one instance type defined.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AutoScaling.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_57713A",
+      "title": "EC2 Auto Scaling groups should use EC2 launch templates",
+      "description": "This control checks whether an Amazon EC2 Auto Scaling group is created from an EC2 launch template. This control fails if an Amazon EC2 Auto Scaling group is not created with a launch template or if a launch template is not specified in a mixed instances policy.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "AutoScaling.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_A8D2BD",
+      "title": "Amazon EC2 instances launched using Auto Scaling group launch configurations should not have Public IP addresses",
+      "description": "This control checks whether Amazon EC2 Auto Scaling groups have public IP addresses enabled using launch configurations.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Autoscaling.5",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_2607BE",
+      "title": "AWS Backup recovery points should be encrypted at rest",
+      "description": "This control checks if an AWS Backup recovery point is encrypted at rest. The control fails if the recovery point isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Backup.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_37F1D6",
+      "title": "CodeBuild project environment variables should not contain clear text credentials",
+      "description": "This AWS control checks whether the project contains environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "IAMPolicyInterrogator",
+        "method": "check_iam_policy",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CodeBuild.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "S3_FE33E2",
+      "title": "CodeBuild S3 logs should be encrypted",
+      "description": "This control checks if Amazon S3 logs for an AWS CodeBuild project are encrypted. The control fails if encryption is deactivated for S3 Logs for a CodeBuild project.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CodeBuild.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_74473E",
+      "title": "CodeBuild project environments should have a logging configuration",
+      "description": "This control checks whether a CodeBuild project environment has at least one log option enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CodeBuild.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_466DCE",
+      "title": "CodeBuild report group exports should be encrypted at rest",
+      "description": "This control checks whether the test results of an AWS CodeBuild report group that are exported to an Amazon Simple Storage Service (Amazon S3) bucket are encrypted at rest. The control fails if the report group export isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CodeBuild.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_25F20F",
+      "title": "Cognito user pools should have threat protection activated with full function enforcement mode for standard authentication",
+      "description": "This control checks whether an Amazon Cognito user pool has threat protection activated with the enforcement mode set to full function for standard authentication. The control fails if the user pool has threat protection deactivated or if the enforcement mode isn't set to full function for standard authentication.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Cognito.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B91882",
+      "title": "Cognito identity pools should not allow unauthenticated identities",
+      "description": "This control checks whether an Amazon Cognito identity pool is configured to allow unauthenticated identities. The control fails if guest access is activated (the AllowUnauthenticatedIdentities parameter is set to true) for the identity pool.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Cognito.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_0427D6",
+      "title": "Amazon Connect instances should have CloudWatch logging enabled",
+      "description": "This control checks whether an Amazon Connect instance is configured to generate and store flow logs in an Amazon CloudWatch log group. The control fails if the Amazon Connect instance isn't configured to generate and store flow logs in a CloudWatch log group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Connect.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_59619F",
+      "title": "Database Migration Service replication instances should not be public",
+      "description": "This AWS control checks whether AWS Database Migration Service replication instances are public by examining the PubliclyAccessible field value.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_8A4F1F",
+      "title": "DMS endpoints for Neptune databases should have IAM authorization enabled",
+      "description": "This control checks whether an AWS DMS endpoint for an Amazon Neptune database is configured with IAM authorization. The control fails if the DMS endpoint doesn't have IAM authorization enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_EE5F2B",
+      "title": "DMS endpoints for MongoDB should have an authentication mechanism enabled",
+      "description": "This control checks whether an AWS DMS endpoint for MongoDB is configured with an authentication mechanism. The control fails if an authentication type isn't set for the endpoint.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.11",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A04F79",
+      "title": "DMS endpoints for Redis OSS should have TLS enabled",
+      "description": "This control checks whether an AWS DMS endpoint for Redis OSS is configured with a TLS connection. The control fails if the endpoint doesn't have TLS enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_ECDC85",
+      "title": "DMS replication instances should have automatic minor version upgrade enabled",
+      "description": "This control checks if automatic minor version upgrade is enabled for an AWS DMS replication instance. The control fails if automatic minor version upgrade isn't enabled for a DMS replication instance.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9CBF98",
+      "title": "DMS replication tasks for the target database should have logging enabled",
+      "description": "This control checks whether logging is enabled with the minimum severity level of LOGGER_SEVERITY_DEFAULT for DMS replication task events TARGET_APPLY and TARGET_LOAD. The control fails if logging isn't enabled for these events or if the minimum severity level is less than LOGGER_SEVERITY_DEFAULT.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_FFC039",
+      "title": "DMS replication tasks for the source database should have logging enabled",
+      "description": "The control checks whether logging is enabled with the minimum severity level of LOGGER_SEVERITY_DEFAULT for DMS replication task events SOURCE_CAPTURE and SOURCE_UNLOAD. The control fails if logging isn't enabled for these events of the source database or if the minimum severity level is less than LOGGER_SEVERITY_DEFAULT.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C4DDEC",
+      "title": "DMS endpoints should use SSL",
+      "description": "This control checks whether an AWS DMS endpoint uses an SSL connection. The control fails if the endpoint doesn't use SSL.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DMS.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_96BB00",
+      "title": "Firehose delivery streams should be encrypted at rest",
+      "description": "This control checks whether an Amazon Data Firehose delivery stream is encrypted at rest with server-side encryption. This control fails if the delivery stream is not encrypted at rest with server-side encryption.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DataFirehose.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_20E3B5",
+      "title": "DataSync tasks should have logging enabled",
+      "description": "This control checks whether an AWS DataSync task has logging enabled. The control fails if the task doesn't have logging enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DataSync.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_93B71B",
+      "title": "Amazon DocumentDB clusters should be encrypted at rest",
+      "description": "This control checks whether an Amazon DocumentDB cluster is encrypted at rest. The control fails if an Amazon DocumentDB cluster isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7C3081",
+      "title": "Amazon DocumentDB clusters should have an adequate backup retention period",
+      "description": "This control checks whether an Amazon DocumentDB cluster has a backup retention period greater than or equal to the specified time frame. The control fails if the backup retention period is less than the specified time frame. Unless you provide a custom parameter value for the backup retention period, Security Hub uses a default value of 7 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D45CD8",
+      "title": "Amazon DocumentDB manual cluster snapshots should not be public",
+      "description": "This control checks whether an Amazon DocumentDB manual snapshot is public. The control fails if the manual snapshot is public.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_39A65C",
+      "title": "Amazon DocumentDB clusters should publish audit logs to CloudWatch Logs",
+      "description": "This control checks whether a DocumentDB cluster publishes audit logs to Amazon CloudWatch Logs. The control fails if a DocumentDB cluster doesn't publish audit logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4D174E",
+      "title": "Amazon DocumentDB clusters should have deletion protection enabled",
+      "description": "This control checks if an Amazon Document DB cluster has deletion protection enabled. This control fails if the cluster doesn't have deletion protection enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DC8645",
+      "title": "Amazon DocumentDB clusters should be encrypted in transit",
+      "description": "This controls checks whether an Amazon DocumentDB cluster requires TLS for connections to the cluster. The control fails if the cluster parameter group associated with the cluster is not in sync, or the TLS cluster parameter is set to 'disabled' or 'enabled'.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DocumentDB.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_937C4F",
+      "title": "DynamoDB tables should automatically scale capacity with demand",
+      "description": "This control checks whether an Amazon DynamoDB table can scale its read and write capacity as needed. The control fails if the table doesn't use on-demand capacity mode or provisioned mode with auto scaling configured. By default, this control only requires that one of these modes be configured, without regard to specific levels of read or write capacity. Optionally, you can provide custom parameter values to require specific levels of read and write capacity.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DynamoDB.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3B7B82",
+      "title": "DynamoDB tables should have point-in-time recovery enabled",
+      "description": "This control checks whether point-in-time recovery (PITR) is enabled for a DynamoDB table.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DynamoDB.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_66FEB1",
+      "title": "DynamoDB Accelerator (DAX) clusters should be encrypted at rest",
+      "description": "This control checks whether a DAX cluster is encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DynamoDB.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_34EAF8",
+      "title": "DynamoDB tables should have deletion protection enabled",
+      "description": "This control checks whether an Amazon DynamoDB table has deletion protection enabled. The control fails if a DynamoDB table doesn't have deletion protection enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DynamoDB.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B181D9",
+      "title": "DynamoDB Accelerator clusters should be encrypted in transit",
+      "description": "This control checks whether an Amazon DynamoDB Accelerator (DAX) cluster is encrypted in transit, with the endpoint encryption type set to TLS. The control fails if the DAX cluster isn't encrypted in transit.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "DynamoDB.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B92BEB",
+      "title": "ECR private repositories should have image scanning configured",
+      "description": "This control checks whether a private ECR repository has image scanning configured. This control fails if a private ECR repository doesn\u2019t have image scanning configured.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECR.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CB96B0",
+      "title": "ECR private repositories should have tag immutability configured",
+      "description": "This control checks whether a private ECR repository has tag immutability configured. This control fails if a private ECR repository has tag immutability disabled. This rule passes if tag immutability is configured and has the value IMMUTABLE",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECR.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8B8457",
+      "title": "ECR repositories should have at least one lifecycle policy configured",
+      "description": "This control checks whether an ECR repository has at least one lifecycle policy configured. This control fails if an ECR repository does not have any lifecycle policies configured.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECR.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7EBC9A",
+      "title": "Amazon ECS task definitions should have secure networking modes and user definitions.",
+      "description": "This control checks if an Amazon ECS Task Definition with host networking mode has \"privileged\" or \"user\" container definitions. The control fails with host network mode and container definitions are privileged=false or empty and user=root or empty.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_5F0B28",
+      "title": "ECS Fargate services should run on the latest Fargate platform version",
+      "description": "This control checks if ECS Fargate services is running the latest Fargate platform version. This control fails if the platform version is not latest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CB6BE4",
+      "title": "ECS clusters should use Container Insights",
+      "description": "This control checks if ECS clusters use Container Insights. This control fails if Container Insights are not set up for a cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DE3C7C",
+      "title": "ECS task sets should not automatically assign public IP addresses",
+      "description": "This control checks whether an Amazon ECS task set is configured to automatically assign public IP addresses. The control fails if 'AssignPublicIP' is set to 'ENABLED'.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.16",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_305CC5",
+      "title": "ECS services should not have public IP addresses assigned to them automatically",
+      "description": "This control checks whether ECS services are configured to automatically assign public IP addresses. This control fails if AssignPublicIP is ENABLED.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AA2544",
+      "title": "ECS task definitions should not share the host's process namespace",
+      "description": "This control checks if Amazon ECS task definitions are configured to share a host's process namespace with its containers. This control fails if the task definition shares the host's process namespace with the containers running on it",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DB36F7",
+      "title": "ECS containers should run as non-privileged",
+      "description": "This control checks if the privileged parameter in the container definition of Amazon ECS task definitions is set to 'true'. This control fails if this parameter is equal to 'true'.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.4",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E7A5E6",
+      "title": "ECS containers should be limited to read-only access to root filesystems",
+      "description": "This control checks if ECS containers are limited to read-only access to mounted root filesystems. This control fails if the ReadonlyRootFilesystem parameter in the container definition of ECS task definitions is set to \u2018false\u2019.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.5",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_B65BB6",
+      "title": "Secrets should not be passed as container environment variables",
+      "description": "This control checks if the key value of any variables in the \u2018environment\u2019 parameter of container definitions includes - AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,  or ECS_ENGINE_AUTH_DATA.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.8",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DD53CC",
+      "title": "ECS task definitions should have a logging configuration",
+      "description": "This control checks if the latest active Amazon ECS task definition has a logging configuration specified. The control fails if the task definition doesn't have the logConfiguration property defined or if the value for logDriver is null in at least one container definition.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ECS.9",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_61AFC0",
+      "title": "Amazon EFS volumes should be in backup plans",
+      "description": "This control checks whether Amazon Elastic File System (Amazon EFS) file systems are added to the backup plans in AWS Backup. The control fails if EFS file systems are not included in the backup plans.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_711312",
+      "title": "EFS access points should enforce a root directory",
+      "description": "This control checks if Amazon Elastic File System (Amazon EFS) access points are configured to enforce a root directory. This control fails if the value of 'Path' is set to '/' (default root directory of the file system).",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4C2AF6",
+      "title": "EFS access points should enforce a user identity",
+      "description": "This control checks whether Amazon Elastic File System (Amazon EFS) access points are configured to enforce a user identity. This control fails if \u2018PosixUser\u2019 is not defined under \u2018configuration\u2019 or if parameters are provided and there is no match in the corresponding parameter.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9BCFBE",
+      "title": "EFS mount targets should not be associated with a public subnet",
+      "description": "This control checks whether an Amazon EFS mount target is associated with a private subnet. The control fails if the mount target is associated with a public subnet.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AA543B",
+      "title": "EFS file systems should have automatic backups enabled",
+      "description": "This control checks whether an Amazon EFS file system has automatic backups enabled. This control fails if the EFS file system doesn't have automatic backups enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C8C94A",
+      "title": "EFS file systems should be encrypted at rest",
+      "description": "This control checks whether an Amazon EFS file system encrypts data with AWS Key Management Service (AWS KMS). The control fails if a file system isn't encrypted. Optionally, you can include the kmsKeyArns parameter to check if a file system is encrypted with specified KMS keys.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EFS.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AAF660",
+      "title": "EKS cluster endpoints should not be publicly accessible",
+      "description": "This control checks whether an Amazon EKS cluster endpoint is publicly accessible. The control fails if an EKS cluster has an endpoint that is publicly accessible.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EKS.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_940F4B",
+      "title": "EKS clusters should run on a supported Kubernetes version",
+      "description": "This control checks whether an EKS cluster is running on a supported Kubernetes version. The control fails if the EKS cluster is running on an unsupported version.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EKS.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4F0787",
+      "title": "EKS clusters should use encrypted Kubernetes secrets",
+      "description": "This control checks whether an Amazon EKS cluster uses encrypted Kubernetes secrets. The control fails if the cluster's Kubernetes secrets aren't encrypted.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EKS.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A15C96",
+      "title": "EKS clusters should have audit logging enabled",
+      "description": "This control checks whether an Amazon EKS cluster has audit logging enabled. The control fails if audit logging isn't enabled for the cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EKS.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F70C90",
+      "title": "Amazon EMR cluster primary nodes should not have public IP addresses",
+      "description": "This control checks whether primary nodes on EMR clusters have public IP addresses.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EMR.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_FC7F61",
+      "title": "Amazon EMR block public access setting should be enabled",
+      "description": "This control checks whether your account is configured with Amazon EMR block public access. The control fails if the block public access setting is not enabled or if any port other than 22 is allowed.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EMR.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A770D5",
+      "title": "Amazon EMR security configurations should have encryption at rest enabled",
+      "description": "This control checks whether an Amazon EMR security configuration has encryption at rest enabled. The control fails if the security configuration doesn't enable encryption at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EMR.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F51379",
+      "title": "Amazon EMR security configurations should have encryption in transit enabled",
+      "description": "This control checks whether an Amazon EMR security configuration has encryption in transit enabled. The control fails if the security configuration doesn't enable encryption in transit.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EMR.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DBC68B",
+      "title": "Elasticsearch domains should have encryption at-rest enabled",
+      "description": "This AWS control checks whether Elasticsearch domains have encryption at rest configuration enabled. This check fails if the EncryptionAtRestOptions field is not enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1C23DC",
+      "title": "Elasticsearch domains should not be publicly accessible",
+      "description": "This control checks whether an Elasticsearch domain is publicly accessible. The control fails if an Elasticsearch domain is publicly accessible. It does not evaluate the VPC subnet routing configuration to determine public access.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_6A31BC",
+      "title": "Elasticsearch domains should encrypt data sent between nodes",
+      "description": "This control checks whether Elasticsearch domains have node-to-node encryption enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_6678A4",
+      "title": "Elasticsearch domain error logging to CloudWatch Logs should be enabled",
+      "description": "This control checks whether Elasticsearch domains are configured to send error logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0B24DE",
+      "title": "Elasticsearch domains should have audit logging enabled",
+      "description": "This control checks whether Elasticsearch domains have audit logging enabled. This control fails if an Elasticsearch domain does not have audit logging enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_502370",
+      "title": "Elasticsearch domains should have at least three data nodes",
+      "description": "This control checks whether Elasticsearch domains are configured with at least three data nodes and zoneAwarenessEnabled is true.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E0C735",
+      "title": "Elasticsearch domains should be configured with at least three dedicated master nodes",
+      "description": "This control checks whether Elasticsearch domains are configured with at least three dedicated master nodes. This control fails if dedicatedMasterEnabled is not true.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F90A07",
+      "title": "Connections to Elasticsearch domains should be encrypted using the latest TLS security policy",
+      "description": "This controls checks whether connections to an Elasticsearch domain are using the latest TLS security policy. The control fails if the Elasticsearch domain isn't using the latest supported policy or if HTTPs isn't enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ES.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C4E578",
+      "title": "ElastiCache (Redis OSS) clusters should have automatic backups enabled",
+      "description": "This control evaluates whether an Amazon ElastiCache (Redis OSS) cluster has automatic backups enabled. The control fails if the 'SnapshotRetentionLimit' for the Redis OSS cluster is less than the specified time period. Unless you provide a custom parameter value for the snapshot retention period, Security Hub uses a default value of 1 day.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElastiCache.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_73C2BE",
+      "title": "ElastiCache clusters should have automatic minor version upgrades enabled",
+      "description": "This control evaluates whether ElastiCache automatically applies minor version upgrades to a cache cluster. The control fails if the cache cluster doesn't have minor version upgrades automatically applied.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElastiCache.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3B781C",
+      "title": "ElastiCache replication groups should have automatic failover enabled",
+      "description": "This control checks whether an ElastiCache replication group has automatic failover enabled. The control fails if automatic failover isn't enabled for an ElastiCache replication group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElastiCache.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_784677",
+      "title": "Elastic Beanstalk environments should have enhanced health reporting enabled",
+      "description": "This control checks whether enhanced health reporting is enabled for your AWS Elastic Beanstalk environments.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElasticBeanstalk.1",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1B4E8B",
+      "title": "Elastic Beanstalk managed platform updates should be enabled",
+      "description": "This control checks whether managed platform updates are enabled for an Elastic Beanstalk environment. The control fails if no managed platform updates are enabled. By default, the control passes if any type of platform update is enabled. Optionally, you can provide a custom parameter value to require a specific update level.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElasticBeanstalk.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_3817C9",
+      "title": "Elastic Beanstalk should stream logs to CloudWatch",
+      "description": "This control checks whether an Elastic Beanstalk environment is configured to send logs to CloudWatch Logs. The control fails if an Elastic Beanstalk environment isn't configured to send logs to CloudWatch Logs. Optionally, you can provide a custom value for the 'RetentionInDays' parameter if you want the control to pass only if logs are retained for the specified number of days before expiration.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ElasticBeanstalk.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F753A7",
+      "title": "EventBridge custom event buses should have a resource-based policy attached",
+      "description": "This control checks if an Amazon EventBridge custom event bus has a resource policy attached. This control fails if the custom event bus doesn't have a resource policy.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "EventBridge.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_863686",
+      "title": "FSx for OpenZFS file systems should be configured to copy tags to backups and volumes",
+      "description": "This control checks if an Amazon FSx for OpenZFS file system is configured to copy tags to backups and volumes. The control fails if the OpenZFS file system isn't configured to copy tags to backups and volumes.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "FSx.1",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_67C465",
+      "title": "FSx for Lustre file systems should be configured to copy tags to backups",
+      "description": "This control checks whether an Amazon FSx for Lustre file system is configured to copy tags to backups. This control fails if the Lustre file system isn't configured to copy tags to backups.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "FSx.2",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_6F9EC9",
+      "title": "FSx for OpenZFS file systems should be configured for Multi-AZ deployment",
+      "description": "This control checks whether an Amazon FSx for OpenZFS file system is configured to use the multiple Availability Zones (Multi-AZ) deployment type. The control fails if the file system isn't configured to use the Multi-AZ deployment type.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "FSx.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_2FF375",
+      "title": "FSx for NetApp ONTAP file systems should be configured for Multi-AZ deployment",
+      "description": "This control checks whether an Amazon FSx for NetApp ONTAP file system is configured to use a multiple Availability Zones (Multi-AZ) deployment type. The control fails if the file system isn't configured to use a Multi-AZ deployment type. You can optionally specify a list of deployment types to include in the evaluation.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "FSx.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_00EC68",
+      "title": "FSx for Windows File Server file systems should be configured for Multi-AZ deployment",
+      "description": "This control checks whether an Amazon FSx for Windows File Server file system is configured to use the multiple Availability Zones (Multi-AZ) deployment type. The control fails if the file system isn't configured to use the Multi-AZ deployment type.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "FSx.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1B4D96",
+      "title": "AWS Glue machine learning transforms should be encrypted at rest",
+      "description": "This control checks whether an AWS Glue machine learning transform is encrypted at rest. The control fails if the machine learning transform isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Glue.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AE785C",
+      "title": "AWS Glue Spark jobs should run on supported versions of AWS Glue",
+      "description": "This control checks whether an AWS Glue for Spark job is configured to run on a supported version of AWS Glue. The control fails if the Spark job is configured to run on a version of AWS Glue that's earlier than the minimum supported version.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Glue.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_097780",
+      "title": "GuardDuty should be enabled",
+      "description": "This AWS control checks whether Amazon GuardDuty is enabled in your AWS account and region.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "S3_4689D8",
+      "title": "GuardDuty S3 Protection should be enabled",
+      "description": "This control checks whether GuardDuty S3 Protection is enabled. For a standalone account, the control fails if GuardDuty S3 Protection is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have S3 Protection enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.10",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1AC607",
+      "title": "GuardDuty Runtime Monitoring should be enabled",
+      "description": "This control checks whether Runtime Monitoring is enabled in Amazon GuardDuty. For a standalone account, the control fails if GuardDuty Runtime Monitoring is disabled for the account. In a multi-account environment, the control fails if GuardDuty Runtime Monitoring is disabled for the delegated GuardDuty administrator account and all member accounts.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.11",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_04CFDA",
+      "title": "GuardDuty ECS Runtime Monitoring should be enabled",
+      "description": "This control checks whether the Amazon GuardDuty automated security agent is enabled for runtime monitoring of Amazon ECS clusters on AWS Fargate. For a standalone account, the control fails if the security agent is disabled for the account. In a multi-account environment, the control fails if the security agent is disabled for the delegated GuardDuty administrator account and all member accounts.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_C71031",
+      "title": "GuardDuty EC2 Runtime Monitoring should be enabled",
+      "description": "This control checks whether the Amazon GuardDuty automated security agent is enabled for runtime monitoring of Amazon EC2 instances. For a standalone account, the control fails if the security agent is disabled for the account. In a multi-account environment, the control fails if the security agent is disabled for the delegated GuardDuty administrator account and all member accounts.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.13",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1BB138",
+      "title": "GuardDuty EKS Audit Log Monitoring should be enabled",
+      "description": "This control checks whether GuardDuty EKS Audit Log Monitoring is enabled. For a standalone account, the control fails if GuardDuty EKS Audit Log Monitoring is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have EKS Audit Log Monitoring enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.5",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_502F24",
+      "title": "GuardDuty Lambda Protection should be enabled",
+      "description": "This control checks whether GuardDuty Lambda Protection is enabled. For a standalone account, the control fails if GuardDuty Lambda Protection is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have Lambda Protection enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.6",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_72FBBE",
+      "title": "GuardDuty EKS Runtime Monitoring should be enabled",
+      "description": "This control checks whether GuardDuty EKS Runtime Monitoring with automated agent management is enabled. For a standalone account, the control fails if GuardDuty EKS Runtime Monitoring with automated agent management is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have EKS Runtime Monitoring with automated agent management enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_A2475E",
+      "title": "GuardDuty Malware Protection for EC2 should be enabled",
+      "description": "This control checks whether GuardDuty Malware Protection for EC2 is enabled. For a standalone account, the control fails if GuardDuty Malware Protection for EC2 is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have Malware Protection for EC2 enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.8",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_C71335",
+      "title": "GuardDuty RDS Protection should be enabled",
+      "description": "This control checks whether GuardDuty RDS Protection is enabled. For a standalone account, the control fails if GuardDuty RDS Protection is disabled in the account. In a multi-account environment, the control fails if the delegated GuardDuty administrator account and all member accounts don't have RDS Protection enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "GuardDuty.9",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_72552B",
+      "title": "Amazon Inspector EC2 scanning should be enabled",
+      "description": "This control checks whether Amazon Inspector EC2 scanning is enabled. For a standalone account, the control fails if Amazon Inspector EC2 scanning is disabled in the account. In a multi-account environment, the control fails if the delegated Inspector administrator account and all member accounts don't have EC2 scanning enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Inspector.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C9E546",
+      "title": "Amazon Inspector ECR scanning should be enabled",
+      "description": "This control checks whether Amazon Inspector ECR scanning is enabled. For a standalone account, the control fails if Amazon Inspector ECR scanning is disabled in the account. In a multi-account environment, the control fails if the delegated Inspector administrator account and all member accounts don't have ECR scanning enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Inspector.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_746780",
+      "title": "Amazon Inspector Lambda code scanning should be enabled",
+      "description": "This control checks whether Amazon Inspector Lambda code scanning is enabled. For a standalone account, the control fails if Amazon Inspector Lambda code scanning is disabled in the account. In a multi-account environment, the control fails if the delegated Inspector administrator account and all member accounts don't have Lambda code scanning enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Inspector.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C87152",
+      "title": "Amazon Inspector Lambda standard scanning should be enabled",
+      "description": "This control checks whether Amazon Inspector Lambda standard scanning is enabled. For a standalone account, the control fails if Amazon Inspector Lambda standard scanning is disabled in the account. In a multi-account environment, the control fails if the delegated Inspector administrator account and all member accounts don't have Lambda standard scanning enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Inspector.4",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_87FD0A",
+      "title": "Kinesis streams should be encrypted at rest",
+      "description": "This control checks if Kinesis streams are encrypted at rest with server-side encryption. This control fails if a Kinesis stream is not encrypted at rest with server-side encryption.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Kinesis.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7EA535",
+      "title": "Kinesis streams should have an adequate data retention period",
+      "description": "This control checks whether an Amazon Kinesis data stream has a data retention period greater than or equal to the specified time frame. The control fails if the data retention period is less than the specified time frame. Unless you provide a custom parameter value for the data retention period, Security Hub uses a default value of 168 hours.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Kinesis.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_A9D1C5",
+      "title": "ActiveMQ brokers should stream audit logs to CloudWatch",
+      "description": "This control checks whether an Amazon MQ ActiveMQ broker streams audit logs to Amazon CloudWatch Logs. The control fails if the broker doesn't stream audit logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MQ.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4F492B",
+      "title": "Amazon MQ brokers should have automatic minor version upgrade enabled",
+      "description": "This control checks whether an Amazon MQ broker has automatic minor version upgrade enabled. The control fails if the broker doesn't have automatic minor version upgrade enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MQ.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_730CC4",
+      "title": "MSK clusters should be encrypted in transit among broker nodes",
+      "description": "This controls checks if a MSK cluster allows encryption in transit using HTTPS(TLS) among the broker nodes of the cluster. The control fails if plain text communication is enabled for in cluster broker node connection.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MSK.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8CCA2A",
+      "title": "MSK Connect connectors should be encrypted in transit",
+      "description": "This control checks whether an Amazon MSK Connect connector is encrypted in transit. The control fails if the connector isn't encrypted in transit.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MSK.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_71703D",
+      "title": "Amazon MSK clusters should have public access disabled",
+      "description": "This control checks whether public access is disabled for an Amazon MSK cluster. The control fails if public access is enabled for the MSK cluster.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MSK.4",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9ABDC4",
+      "title": "MSK connectors should have logging enabled",
+      "description": "This control checks whether logging is enabled for an Amazon MSK connector. The control fails if logging is disabled for the MSK connector.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MSK.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3F2971",
+      "title": "MSK clusters should disable unauthenticated access",
+      "description": "This control checks whether unauthenticated access is enabled for an Amazon MSK cluster. The control fails if unauthenticated access is enabled for the MSK cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "MSK.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CB2C19",
+      "title": "Macie should be enabled",
+      "description": "This control checks whether Amazon Macie is enabled for an account. The control fails if Macie isn't enabled for the account.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Macie.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_123189",
+      "title": "Macie automated sensitive data discovery should be enabled",
+      "description": "This control checks whether automated sensitive data discovery is enabled for an Amazon Macie administrator account. The control fails if automated sensitive data discovery isn't enabled for a Macie administrator account. The control doesn't generate a finding for member accounts.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Macie.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_DD66A3",
+      "title": "Neptune DB clusters should be encrypted at rest",
+      "description": "This control checks whether a Neptune DB cluster is encrypted at rest. The control fails if a Neptune DB cluster isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_1BE750",
+      "title": "Neptune DB clusters should publish audit logs to CloudWatch Logs",
+      "description": "This control checks whether a Neptune DB cluster publishes audit logs to Amazon CloudWatch Logs. The control fails if a Neptune DB cluster doesn't publish audit logs to CloudWatch Logs. `EnableCloudWatchLogsExport` should be set to Audit.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9B0506",
+      "title": "Neptune DB cluster snapshots should not be public",
+      "description": "This control checks whether a Neptune manual DB cluster snapshot is public. The control fails if a Neptune manual DB cluster snapshot is public.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.3",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1C2A79",
+      "title": "Neptune DB clusters should have deletion protection enabled",
+      "description": "This control checks if a Neptune DB cluster has deletion protection enabled. The control fails if a Neptune DB cluster doesn't have deletion protection enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_956448",
+      "title": "Neptune DB clusters should have automated backups enabled",
+      "description": "This control checks whether a Neptune DB cluster has automated backups enabled, and a backup retention period greater than or equal to the specified time frame. The control fails if backups aren't enabled for the Neptune DB cluster, or if the retention period is less than the specified time frame. Unless you provide a custom parameter value for the backup retention period, Security Hub uses a default value of 7 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_EA3366",
+      "title": "Neptune DB cluster snapshots should be encrypted at rest",
+      "description": "This control checks whether a Neptune DB cluster snapshot is encrypted at rest. The control fails if a Neptune DB cluster isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_2B2372",
+      "title": "Neptune DB clusters should have IAM database authentication enabled",
+      "description": "This control checks if a Neptune DB cluster has IAM database authentication enabled. The control fails if IAM database authentication isn't enabled for a Neptune DB cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_142433",
+      "title": "Neptune DB clusters should be configured to copy tags to snapshots",
+      "description": "This control checks if a Neptune DB cluster is configured to copy all tags to snapshots when the snapshots are created. The control fails if a Neptune DB cluster isn't configured to copy tags to snapshots.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Neptune.8",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_35DD03",
+      "title": "Network Firewall firewalls should have subnet change protection enabled",
+      "description": "This control checks whether subnet change protection is enabled for an AWS Network Firewall firewall. The control fails if subnet change protection isn't enabled for the firewall.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_6CB0C1",
+      "title": "Network Firewall logging should be enabled",
+      "description": "This control checks whether logging is enabled for an AWS Network Firewall firewall. The control fails if logging isn't enabled for at least one log type or if the logging destination doesn't exist.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_86F466",
+      "title": "Network Firewall policies should have at least one rule group associated",
+      "description": "This control checks whether a Network Firewall policy has any stateful or stateless rule groups associated. This control fails if stateless or stateful rule groups are not assigned.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E6E1C6",
+      "title": "The default stateless action for Network Firewall policies should be drop or forward for full packets",
+      "description": "This control checks whether the default stateless action for full packets for a Network Firewall policy is drop or forward. The control passes if Drop or Forward is selected, and fails if Pass is selected.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1209A8",
+      "title": "The default stateless action for Network Firewall policies should be drop or forward for fragmented packets",
+      "description": "This control checks whether the default stateless action for fragmented packets for a Network Firewall policy is drop or forward. The control passes if Drop or Forward is selected, and fails if Pass is selected.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9E5E1D",
+      "title": "Stateless network firewall rule group should not be empty",
+      "description": "This control checks if a Stateless Network Firewall Rule Group contains rules. The rule will fail if there are no rules in a Stateless Network Firewall Rule Group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D5DE8F",
+      "title": "Network Firewall firewalls should have deletion protection enabled",
+      "description": "This control checks whether an AWS Network Firewall firewall has deletion protection enabled. The control fails if deletion protection isn't enabled for a firewall.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "NetworkFirewall.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_08710D",
+      "title": "OpenSearch domains should have encryption at rest enabled",
+      "description": "This control checks whether Amazon OpenSearch domains have encryption-at-rest configuration enabled. The check fails if encryption at rest is not enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E6AC1E",
+      "title": "OpenSearch domains should have the latest software update installed",
+      "description": "This control checks whether an Amazon OpenSearch Service domain has the latest software update installed. The control fails if a software update is available but not installed for the domain.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.10",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_178E37",
+      "title": "OpenSearch domains should not be publicly accessible",
+      "description": "This control checks whether an OpenSearch domain is publicly accessible. The control fails if an OpenSearch domain is publicly accessible. It does not evaluate the VPC subnet routing configuration to determine public access.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.2",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_655F1C",
+      "title": "OpenSearch domains should encrypt data sent between nodes",
+      "description": "This control checks whether Amazon OpenSearch domains have node-to-node encryption enabled. This control fails if node-to-node encryption is disabled on the domain.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_A87839",
+      "title": "OpenSearch domain error logging to CloudWatch Logs should be enabled",
+      "description": "This control checks whether Amazon OpenSearch domains are configured to send error logs to CloudWatch Logs. This control fails if error logging to CloudWatch is not enabled for a domain.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A32257",
+      "title": "OpenSearch domains should have audit logging enabled",
+      "description": "This control checks whether Amazon OpenSearch Service domains have audit logging enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_2931CE",
+      "title": "OpenSearch domains should have at least three data nodes",
+      "description": "This control checks whether Amazon OpenSearch Service domains are configured with at least three data nodes and \"zoneAwarenessEnabled\" is true.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_01F7B8",
+      "title": "OpenSearch domains should have fine-grained access control enabled",
+      "description": "This control checks whether Amazon OpenSearch domains have fine-grained access control enabled. This control fails if the fine-grained access control is not enabled.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.7",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F6EF57",
+      "title": "Connections to OpenSearch domains should be encrypted using the latest TLS security policy",
+      "description": "This controls checks whether connections to an Amazon OpenSearch Service domain are using the latest TLS security policy. The control fails if the OpenSearch domain isn't using the latest supported policy or if HTTPs isn't enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Opensearch.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_34F4AB",
+      "title": "AWS Private CA root certificate authority should be disabled",
+      "description": "This control checks if AWS Private CA has a root certificate authority (CA) that is disabled. This control fails if the root CA is enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "PCA.1",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7A1628",
+      "title": "Amazon Redshift clusters should prohibit public access",
+      "description": "This control checks whether Amazon Redshift clusters are publicly accessible. It evaluates the publiclyAccessible field in the cluster configuration item.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0E66E7",
+      "title": "Redshift clusters should be encrypted at rest",
+      "description": "This control checks if an Amazon Redshift cluster is encrypted at rest. The control fails if a Redshift cluster isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0CDFEC",
+      "title": "Redshift clusters should have Multi-AZ deployments enabled",
+      "description": "This control checks whether multiple Availability Zones (Multi-AZ) deployments are enabled for an Amazon Redshift cluster. The control fails if Multi-AZ deployments aren't enabled for the Amazon Redshift cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.18",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7F1E4E",
+      "title": "Connections to Amazon Redshift clusters should be encrypted in transit",
+      "description": "This control checks whether connections to Amazon Redshift clusters are required to use encryption in transit. The check fails if the Amazon Redshift cluster parameter require_SSL is not set to 1.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_BE08DE",
+      "title": "Amazon Redshift clusters should have automatic snapshots enabled",
+      "description": "This control checks whether an Amazon Redshift cluster has automated snapshots enabled, and a retention period greater than or equal to the specified time frame. The control fails if automated snapshots aren't enabled for the cluster, or if the retention period is less than the specified time frame. Unless you provide a custom parameter value for the retention period, Security Hub uses a default value of 7 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_526194",
+      "title": "Amazon Redshift clusters should have audit logging enabled",
+      "description": "This control checks whether an Amazon Redshift cluster has audit logging enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_FC8CC4",
+      "title": "Amazon Redshift should have automatic upgrades to major versions enabled",
+      "description": "This control checks whether an Amazon Redshift cluster is configured with automatic upgrades to major versions.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_80FC33",
+      "title": "Amazon Redshift clusters should not use the default Admin username",
+      "description": "This control checks whether a Redshift cluster has changed the Admin username from its default value. This control will fail if the admin username for a Redshift cluster is set to 'awsuser'.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E55588",
+      "title": "Redshift clusters should not use the default database name",
+      "description": "This control checks whether a Redshift cluster has changed the database name from its default value. This control will fail if the database name for a Redshift cluster is set to \u201cdev\u201d",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Redshift.9",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8E3550",
+      "title": "Connections to Redshift Serverless workgroups should be required to use SSL",
+      "description": "This control checks whether connections to an Amazon Redshift Serverless workgroup are required to encrypt data in transit. The control fails if the `require_ssl` configuration parameter for the workgroup is set to `false`.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_F67CF8",
+      "title": "Redshift Serverless workgroups should prohibit public access",
+      "description": "This control checks whether public access is disabled for an Amazon Redshift Serverless workgroup. It evaluates the publiclyAccessible property of a Redshift Serverless workgroup. The control fails if public access is enabled (true) for the workgroup.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_BDA7F8",
+      "title": "Redshift Serverless namespaces should not use the default admin username",
+      "description": "This control checks whether the admin username for an Amazon Redshift Serverless namespace is the default admin username, 'admin'. The control fails if the admin username for the Redshift Serverless namespace is 'admin'. You can optionally specify a list of admin usernames for the control to include in the evaluation.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_906D43",
+      "title": "Redshift Serverless namespaces should export logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon Redshift Serverless namespace is configured to export connection and user logs to Amazon CloudWatch Logs. The control fails if the Redshift Serverless namespace isn't configured to export the logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_EECFCE",
+      "title": "Redshift Serverless namespaces should not use the default database name",
+      "description": "This control checks whether an Amazon Redshift Serverless namespace uses the default database name, \"dev\". The control fails if the Redshift Serverless namespace uses the default database name, \"dev\".",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RedshiftServerless.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CB1B83",
+      "title": "Route 53 public hosted zones should log DNS queries",
+      "description": "This control checks if DNS query logging is enabled for an Amazon Route 53 public hosted zone. The control fails if DNS query logging isn't enabled for a Route 53 public hosted zone.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Route53.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_242DEA",
+      "title": "SNS topic access policies should not allow public access",
+      "description": "This control checks whether an Amazon SNS topic access policy allows public access. The control fails if the SNS topic access policy allows public access.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SNS.4",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D3BB31",
+      "title": "Amazon SQS queues should be encrypted at rest",
+      "description": "This control checks whether Amazon SQS queues are encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SQS.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AA8877",
+      "title": "SQS queue access policies should not allow public access",
+      "description": "This controls checks whether an Amazon SQS access policy allows public access to an SQS queue. The control fails if an SQS access policy allows public access to the queue.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SQS.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_AE0608",
+      "title": "EC2 instances should be managed by AWS Systems Manager",
+      "description": "This AWS control checks whether the Amazon EC2 instances in your account are managed by AWS Systems Manager.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_CF0994",
+      "title": "EC2 instances managed by Systems Manager should have a patch compliance status of COMPLIANT after a patch installation",
+      "description": "This AWS control checks whether the compliance status of the Amazon EC2 Systems Manager patch compliance is COMPLIANT or NON_COMPLIANT after the patch installation on the instance. It only checks instances that are managed by AWS Systems Manager Patch Manager.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.2",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "EC2_206124",
+      "title": "EC2 instances managed by Systems Manager should have an association compliance status of COMPLIANT",
+      "description": "This AWS control checks whether the status of the AWS Systems Manager association compliance is COMPLIANT or NON_COMPLIANT after the association is executed on an instance.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.3",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_09072A",
+      "title": "SSM documents should not be public",
+      "description": "This control checks whether AWS Systems Manager documents that the account owns are public. This control fails if SSM documents that have \"Self\" as the owner are public.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.4",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_498D10",
+      "title": "SSM Automation should have CloudWatch logging enabled",
+      "description": "This control checks whether Amazon CloudWatch logging is enabled for AWS Systems Manager (SSM) Automation. The control fails if CloudWatch logging isn't enabled for SSM Automation.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_9DA67F",
+      "title": "SSM documents should have the block public sharing setting enabled",
+      "description": "This control checks whether the block public sharing setting is enabled for AWS Systems Manager documents. The control fails if the block public sharing setting is disabled for Systems Manager documents.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SSM.7",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3F8C41",
+      "title": "Amazon SageMaker notebook instances should not have direct internet access",
+      "description": "This AWS control checks whether direct internet access is disabled for an Amazon SageMaker notebook instance by examining the DirectInternetAccess field is disabled for an Amazon SageMaker notebook instance.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3251C5",
+      "title": "Users should not have root access to SageMaker notebook instances",
+      "description": "This control checks whether root access is turned off for Amazon SageMaker notebook instances. The control fails if root access is turned on for a SageMaker notebook instance.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.3",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_5B4AF5",
+      "title": "SageMaker endpoint production variants should have an initial instance count greater than 1",
+      "description": "This control checks whether production variants of an Amazon SageMaker endpoint have an initial instance count greater than 1. The control fails if the endpoint's production variants have only 1 initial instance.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_EF3DA1",
+      "title": "SageMaker models should block inbound traffic",
+      "description": "This control checks whether an Amazon SageMaker hosted model blocks inbound network traffic. The control fails if the EnableNetworkIsolation parameter for the hosted model is set to False.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C97CF6",
+      "title": "SageMaker notebook instances should run on supported platforms",
+      "description": "This control checks whether an Amazon SageMaker AI notebook instance is configured to run on a supported platform, based on the platform identifier specified for the notebook instance. The control fails if the notebook instance is configured to run on a platform that's no longer supported.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SageMaker.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D67924",
+      "title": "Secrets Manager secrets should have automatic rotation enabled",
+      "description": "This control checks whether a secret stored in AWS Secrets Manager is configured with automatic rotation. The control fails if the secret isn't configured with automatic rotation. If you provide a custom value for the 'maximumAllowedRotationFrequency' parameter, the control passes only if the secret is automatically rotated within the specified window of time.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SecretsManager.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_934A42",
+      "title": "Secrets Manager secrets configured with automatic rotation should rotate successfully",
+      "description": "This control checks whether an AWS Secrets Manager secret rotated successfully based on the rotation schedule. The control fails if RotationOccurringAsScheduled is false. The control does not evaluate secrets that do not have rotation configured.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SecretsManager.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0CC22C",
+      "title": "Remove unused Secrets Manager secrets",
+      "description": "This control checks whether an AWS Secrets Manager secret has been accessed within the specified time frame. The control fails if a secret is unused beyond the specified time frame. Unless you provide a custom parameter value for the access period, Security Hub uses a default value of 90 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SecretsManager.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_AB2076",
+      "title": "Secrets Manager secrets should be rotated within a specified number of days",
+      "description": "This control checks whether an AWS Secrets Manager secret is rotated at least once within the specified time frame. The control fails if a secret isn't rotated at least this frequently. Unless you provide a custom parameter value for the rotation period, Security Hub uses a default value of 90 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "SecretsManager.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CCBDDF",
+      "title": "Service Catalog portfolios should be shared within an AWS organization only",
+      "description": "This control checks whether AWS Service Catalog shares portfolios within an organization when the integration with AWS Organizations is enabled. The control fails if portfolios aren't shared within an organization.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "ServiceCatalog.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4A7630",
+      "title": "Step Functions state machines should have logging turned on",
+      "description": "This controls checks whether an AWS Step Functions state machine has logging turned on. The control fails if a state machine doesn't have logging turned on. If you provide a custom value for the 'logLevel' parameter, the control passes only if the state machine has the specified logging level turned on.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "StepFunctions.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_ABD9F3",
+      "title": "Transfer Family servers should not use FTP protocol for endpoint connection",
+      "description": "This control checks whether an AWS Transfer Family server uses a protocol other than FTP for endpoint connection. The control fails if the server uses FTP protocol for a client to connect to the server's endpoint.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Transfer.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_4A1833",
+      "title": "Transfer Family connectors should have logging enabled",
+      "description": "This control checks whether Amazon CloudWatch logging is enabled for an AWS Transfer Family connector. The control fails if CloudWatch logging isn't enabled for the connector.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "Transfer.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_71079D",
+      "title": "AWS WAF Classic Global Web ACL logging should be enabled",
+      "description": "This control checks whether logging is enabled for a WAF global Web ACL. This control fails if logging is not enabled for the Web ACL.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_8A3DD1",
+      "title": "AWS WAF web ACLs should have at least one rule or rule group",
+      "description": "This control checks whether a WAFV2 web ACL contains at least one WAF rule or WAF rule group. The control fails if a web ACL does not contain any WAF rule or rule group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_E1ABF4",
+      "title": "AWS WAF rules should have CloudWatch metrics enabled",
+      "description": "This control checks whether an AWS WAF rule or rule group has CloudWatch metrics enabled. This control fails if the rule or rule group does not have CloudWatch metrics enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1BD949",
+      "title": "AWS WAF Classic Regional rules should have at least one condition",
+      "description": "This control checks whether a WAF Regional rule has at least one condition. The control fails if no conditions are present within a rule.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3EEA61",
+      "title": "AWS WAF Classic Regional rule groups should have at least one rule",
+      "description": "This control checks whether a WAF Regional rule group has at least one rule. The control fails if no rules are present within a rule group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C02667",
+      "title": "AWS WAF Classic Regional web ACLs should have at least one rule or rule group",
+      "description": "This control checks whether a WAF Regional web ACL contains any WAF rules or WAF rule groups. This control fails if a web ACL does not contain any WAF rules or rule groups.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D2F90B",
+      "title": "AWS WAF Classic global rules should have at least one condition",
+      "description": "This control checks whether a WAF global rule has at least one condition. This control fails if no conditions are present within a rule.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_152C05",
+      "title": "AWS WAF Classic global rule groups should have at least one rule",
+      "description": "This control checks whether a WAF global rule group has at least one rule. The control fails if no rules are present within a rule group.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C5F96A",
+      "title": "AWS WAF Classic global web ACLs should have at least one rule or rule group",
+      "description": "This control checks whether a WAF global web ACL contains any WAF rules or WAF rule groups. This control fails if a web ACL does not contain any WAF rules or WAF rule groups.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WAF.8",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CE1DCF",
+      "title": "WorkSpaces user volumes should be encrypted at rest",
+      "description": "This control checks whether a user volume in an Amazon WorkSpaces WorkSpace is encrypted at rest. The control fails if the WorkSpace user volume isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WorkSpaces.1",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_7E68C7",
+      "title": "WorkSpaces root volumes should be encrypted at rest",
+      "description": "This control checks whether a root volume in an Amazon WorkSpaces WorkSpace is encrypted at rest. The control fails if the WorkSpace root volume isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "WorkSpaces.2",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# AWS Security Control Framework Configuration
+
+# AWS Settings
+aws:
+  region: us-east-1
+  organization_accounts:
+    - "123456789012"  # Replace with your actual account IDs
+    - "123456789013"
+    - "123456789014"
+  cloudtrail_log_group: CloudTrail  # Name of your CloudTrail log group
+
+# Analysis Settings
+analysis:
+  days_back: 30  # How many days of CloudTrail to analyze
+
+# Paths
+paths:
+  control_definitions: ./control_definitions
+  interrogators: ./interrogators
+  reports: ./reports
+  logs: ./logs
+
+# Report Settings
+reporting:
+  include_remediation: true
+  include_standards_mapping: true
+  max_violations_shown: 100

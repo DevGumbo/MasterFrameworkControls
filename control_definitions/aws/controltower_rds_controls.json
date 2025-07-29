@@ -1,0 +1,25 @@
+{
+  "service": "rds",
+  "controls": [
+    {
+      "control_id": "CT_RDS_PR_23",
+      "title": "Disallow public accessibility for RDS database instances",
+      "description": "RDS instances should not have the PubliclyAccessible flag set to true",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "execute",
+        "parameters": {
+          "resource_type": "RDSInstance",
+          "check_type": "publicly_accessible"
+        }
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.RDS.PR.23",
+          "severity": "CRITICAL"
+        }
+      }
+    }
+  ]
+}

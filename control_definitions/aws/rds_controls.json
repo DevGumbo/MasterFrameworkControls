@@ -1,0 +1,606 @@
+{
+  "service": "rds",
+  "controls": [
+    {
+      "control_id": "RDS_C72118",
+      "title": "RDS snapshot should be private",
+      "description": "This AWS control checks if Amazon Relational Database Service (Amazon RDS) snapshots are public.",
+      "severity": "CRITICAL",
+      "interrogation": {
+        "class": "ResourcePublicAccessInterrogator",
+        "method": "check_public_access",
+        "parameters": {
+          "resource_type": "EBSSnapshot",
+          "check_type": "public_sharing"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.1",
+          "severity": "CRITICAL"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_7F3FCD",
+      "title": "IAM authentication should be configured for RDS instances",
+      "description": "This control checks whether an RDS DB instance has IAM database authentication enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_87BE3C",
+      "title": "RDS instances should have automatic backups enabled",
+      "description": "This control checks whether an Amazon Relational Database Service instance has automated backups enabled, and a backup retention period greater than or equal to the specified time frame. Read replicas are excluded from evaluation. The control fails if backups aren't enabled for the instance, or if the retention period is less than the specified time frame. Unless you provide a custom parameter value for the backup retention period, Security Hub uses a default value of 7 days.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.11",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "IAM_A05492",
+      "title": "IAM authentication should be configured for RDS clusters",
+      "description": "This control checks if an RDS DB cluster has IAM database authentication enabled.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.12",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_CB3D60",
+      "title": "Amazon Aurora clusters should have backtracking enabled",
+      "description": "This control checks whether an Amazon Aurora cluster has backtracking enabled. The control fails if the cluster doesn't have backtracking enabled. If you provide a custom value for the 'BacktrackWindowInHours' parameter, the control passes only if the cluster is backtracked for the specified length of time.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.14",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_4B7B0D",
+      "title": "RDS DB clusters should be configured for multiple Availability Zones",
+      "description": "This control checks if Amazon RDS DB clusters are configured with multiple Availability Zones.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.15",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_6293BA",
+      "title": "Aurora DB clusters should be configured to copy tags to DB snapshots",
+      "description": "This control checks whether an Amazon Aurora DB cluster is configured to automatically copy tags to snapshots of the DB cluster when the snapshots are created. The control fails if the Aurora DB cluster isn\u2019t configured to automatically copy tags to snapshots of the cluster when the snapshots are created.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.16",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_97D768",
+      "title": "RDS DB instances should be configured to copy tags to snapshots",
+      "description": "This control checks whether RDS DB instances are configured to copy all tags to snapshots when the snapshots are created.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.17",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_84850A",
+      "title": "Existing RDS event notification subscriptions should be configured for critical cluster events",
+      "description": "This control checks whether an Amazon RDS Event subscription for RDS clusters is configured to notify on event categories of both \"maintenance\" and \"failure\".",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.19",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_ACF0B5",
+      "title": "Existing RDS event notification subscriptions should be configured for critical database instance events",
+      "description": "This control checks whether an Amazon RDS Event subscription for RDS instances is configured to notify on event categories of both \"maintenance\", \"configuration change\", and \"failure\".",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.20",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_37BF1D",
+      "title": "An RDS event notifications subscription should be configured for critical database parameter group events",
+      "description": "This control checks whether an Amazon RDS Event subscription for RDS parameter groups is configured to notify on event category of \"configuration change\".",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.21",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_60FDAD",
+      "title": "RDS instances should not use a database engine default port",
+      "description": "This control checks whether RDS instances use the default port of that database engine.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.23",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_FF6775",
+      "title": "RDS Database Clusters should use a custom administrator username",
+      "description": "This control checks whether an RDS database cluster has changed the admin username from its default value. This rule will fail if the admin username is set to the default value.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.24",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_0BF9C0",
+      "title": "RDS database instances should use a custom administrator username",
+      "description": "This control checks whether an Amazon Relational Database Service (Amazon RDS) database instance has changed the admin username from its default value. This rule will only run on RDS database instances. The rule will fail if the admin username is set to the default value.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.25",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_93A201",
+      "title": "RDS DB clusters should be encrypted at rest",
+      "description": "This control checks if an RDS DB cluster is encrypted at rest. The control fails if an RDS DB cluster isn't encrypted at rest.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.27",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_8F1723",
+      "title": "Aurora MySQL DB clusters should publish audit logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon Aurora MySQL DB cluster is configured to publish audit logs to Amazon CloudWatch Logs. The control fails if the cluster isn\u2019t configured to publish audit logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.34",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_7CBCD1",
+      "title": "RDS DB clusters should have automatic minor version upgrade enabled",
+      "description": "This control checks if automatic minor version upgrade is enabled for an Amazon RDS database cluster. This control fails if automatic minor version upgrade isn't enabled for an RDS cluster.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.35",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_4C1A95",
+      "title": "RDS for PostgreSQL DB instances should publish logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon RDS for PostgreSQL DB instance is configured to publish logs to Amazon CloudWatch Logs. The control fails if the PostgreSQL DB instance isn't configured to publish the log types mentioned in the 'logTypes' parameter to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.36",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "MONITORING_29F3D9",
+      "title": "Aurora PostgreSQL DB clusters should publish logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon Aurora PostgreSQL DB cluster is configured to publish PostgreSQL logs to Amazon CloudWatch Logs. The control fails if the Aurora PostgreSQL DB cluster isn't configured to publish PostgreSQL logs to CloudWatch Logs.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.37",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_B82885",
+      "title": "RDS for PostgreSQL DB instances should be encrypted in transit",
+      "description": "This control checks whether a connection to an Amazon RDS for PostgreSQL database (DB) instance is encrypted in transit. The control fails if the rds.force_ssl parameter for the parameter group associated with the instance is set to 0.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.38",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_39458A",
+      "title": "RDS for MySQL DB instances should be encrypted in transit",
+      "description": "This control checks whether a connection to an Amazon RDS for MySQL database (DB) instance is encrypted in transit. The control fails if the rds.require_secure_transport parameter for the parameter group associated with the instance is set to 0 (off).",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.39",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_31DFB8",
+      "title": "RDS cluster snapshots and database snapshots should be encrypted at rest",
+      "description": "This control checks whether Amazon RDS cluster snapshots and database snapshots are encrypted.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.4",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_D1D14B",
+      "title": "RDS for SQL Server DB instances should publish logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon RDS for Microsoft SQL Server DB instance is configured to publish logs to Amazon CloudWatch Logs. The control fails if the RDS for SQL Server DB instance isn't configured to publish logs to CloudWatch Logs. You can optionally specify the types of logs that a DB instance should be configured to publish.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.40",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_40D99D",
+      "title": "RDS for SQL Server DB instances should be encrypted in transit",
+      "description": "This control checks whether a connection to an Amazon RDS for Microsoft SQL Server DB instance is encrypted in transit. The control fails if the rds.force_ssl parameter of the parameter group associated with the DB instance is set to 0 (off).",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.41",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_A9786C",
+      "title": "RDS for MariaDB DB instances should publish logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon RDS for MariaDB DB instance is configured to publish certain types of logs to Amazon CloudWatch Logs. The control fails if the MariaDB DB instance isn't configured to publish the logs to CloudWatch Logs. You can optionally specify which types of logs a MariaDB DB instance should be configured to publish.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.42",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_2978B0",
+      "title": "RDS for MariaDB DB instances should be encrypted in transit",
+      "description": "This control checks whether connections to an Amazon RDS for MariaDB DB instance are encrypted in transit. The control fails if the DB parameter group associated with the DB instance is not in sync, or the rds.require_secure_transport parameter of the parameter group associated with the instance is set to 0 (off).",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.44",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_39CF4E",
+      "title": "Aurora MySQL DB clusters should have audit logging enabled",
+      "description": "This control checks whether an Amazon Aurora MySQL DB cluster has audit logging enabled. The control fails if the DB parameter group associated with the DB cluster is not in sync, the server_audit_logging parameter is not set to '1', or the server_audit_events parameter is set to an empty value.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.45",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_51B18E",
+      "title": "RDS DB instances should be configured with multiple Availability Zones",
+      "description": "This control checks whether high availability is enabled for your RDS DB instances.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_FC81A4",
+      "title": "Enhanced monitoring should be configured for RDS DB instances",
+      "description": "This control checks whether enhanced monitoring is enabled for an Amazon Relational Database Service (Amazon RDS) DB instance. The control fails if enhanced monitoring isn't enabled for the instance. If you provide a custom value for the 'monitoringInterval' parameter, the control passes only if enhanced monitoring metrics are collected for the instance at the specified interval.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.6",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_94CF74",
+      "title": "RDS clusters should have deletion protection enabled",
+      "description": "This control checks whether RDS clusters have deletion protection enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.7",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_0788D6",
+      "title": "RDS DB instances should have deletion protection enabled",
+      "description": "This control checks whether RDS DB instances have deletion protection enabled.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.8",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "RDS_7BA1F0",
+      "title": "RDS DB instances should publish logs to CloudWatch Logs",
+      "description": "This control checks whether an Amazon RDS DB instance is configured to publish the following logs to Amazon CloudWatch Logs. The control fails if the instance isn\u2019t configured to publish the following logs to CloudWatch Logs: Oracle: (Alert, Audit, Trace, Listener), PostgreSQL: (Postgresql, Upgrade), MySQL: (Audit, Error, General, SlowQuery), MariaDB: (Audit, Error, General, SlowQuery), SQL Server: (Error, Agent), Aurora: (Audit, Error, General, SlowQuery), Aurora-MySQL: (Audit, Error, General, SlowQuery), Aurora-PostgreSQL: (Postgresql).",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "RDS.9",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}

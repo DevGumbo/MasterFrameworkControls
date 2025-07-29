@@ -1,0 +1,189 @@
+{
+  "service": "cloudtrail",
+  "controls": [
+    {
+      "control_id": "CLOUDTRAIL_02C928",
+      "title": "Ensure CloudTrail is enabled in all regions",
+      "description": "AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.1",
+          "severity": "HIGH"
+        },
+        "cis_v1_4": {
+          "control_id": "3.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_DB5269",
+      "title": "Ensure CloudTrail log file validation is enabled",
+      "description": "CloudTrail log file validation creates a digitally signed digest file containing a hash of each log that CloudTrail writes to S3. These digest files can be used to determine whether a log file was changed, deleted, or unchanged after CloudTrail delivered the log. It is recommended that file validation be enabled on all CloudTrails.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail",
+          "check_type": "log_validation"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.2",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "3.2",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_7C2F29",
+      "title": "Ensure CloudTrail trails are integrated with CloudWatch Logs",
+      "description": "AWS CloudTrail is a web service that records AWS API calls made in a given AWS account. CloudTrail uses Amazon S3 for log file storage and delivery, so log files are stored durably. In addition to capturing CloudTrail logs within a specified S3 bucket for long term analysis, realtime analysis can be performed by configuring CloudTrail to send logs to CloudWatch Logs. It is recommended that CloudTrail logs be sent to CloudWatch Logs.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.2.4",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "3.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_87E4F8",
+      "title": "Ensure a log metric filter and alarm exist for CloudTrail configuration changes",
+      "description": "Real-time monitoring of API calls can be achieved by directing CloudTrail Logs to CloudWatch Logs and establishing corresponding metric filters and alarms. It is recommended that a metric filter and alarm be established for detecting changes to CloudTrail's configurations.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail"
+        }
+      },
+      "standards": {
+        "cis_v1_2": {
+          "control_id": "CIS.3.5",
+          "severity": "LOW"
+        },
+        "cis_v1_4": {
+          "control_id": "4.5",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_522FDB",
+      "title": "CloudTrail should be enabled and configured with at least one multi-Region trail that includes read and write management events",
+      "description": "AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service. CloudTrail provides a history of AWS API calls for an account, including API calls made via the Management Console, SDKs, command line tools, and higher-level AWS services (such as CloudFormation).",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail",
+          "check_type": "multi_region"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.1",
+          "severity": "HIGH"
+        },
+        "fsbp": {
+          "control_id": "CloudTrail.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_139A33",
+      "title": "CloudTrail log file validation should be enabled",
+      "description": "CloudTrail log file validation creates a digitally signed digest file containing a hash of each log that CloudTrail writes to S3. These digest files can be used to determine whether a log file was changed, deleted, or unchanged after CloudTrail delivered the log. It is recommended that file validation be enabled on all CloudTrails.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail",
+          "check_type": "log_validation"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.2",
+          "severity": "LOW"
+        },
+        "fsbp": {
+          "control_id": "CloudTrail.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_755228",
+      "title": "CloudTrail should have encryption at-rest enabled",
+      "description": "AWS CloudTrail is a web service that records AWS API calls for an account and makes those logs available to users and resources in accordance with IAM policies. AWS Key Management Service (KMS) is a managed service that helps create and control the encryption keys used to encrypt account data, and uses Hardware Security Modules (HSMs) to protect the security of encryption keys. CloudTrail logs can be configured to leverage server side encryption (SSE) and KMS customer created master keys (CMK) to further protect CloudTrail logs. It is recommended that CloudTrail be configured to use SSE-KMS.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "at_rest",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "cis_v3_0": {
+          "control_id": "3.5",
+          "severity": "MEDIUM"
+        },
+        "fsbp": {
+          "control_id": "CloudTrail.2",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "CLOUDTRAIL_DEB768",
+      "title": "CloudTrail trails should be integrated with Amazon CloudWatch Logs",
+      "description": "This AWS control checks whether AWS CloudTrail trails are configured to send logs to Amazon CloudWatch Logs.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {
+          "service": "cloudtrail"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudTrail.5",
+          "severity": "LOW"
+        }
+      }
+    }
+  ]
+}

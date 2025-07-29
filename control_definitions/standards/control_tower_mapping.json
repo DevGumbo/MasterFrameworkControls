@@ -1,0 +1,10 @@
+{
+  "CT.EC2.PR.4": "CT_EC2_PR_4",
+  "CT.EC2.PV.2": "CT_EC2_PV_2",
+  "CT.EC2.PV.3": "CT_EC2_PV_3",
+  "CT.KMS.PV.7": "CT_KMS_PV_7",
+  "CT.LAMBDA.PV.1": "CT_LAMBDA_PV_1",
+  "CT.RDS.PR.23": "CT.RDS.PR.23",
+  "CT.S3.PV.3": "CT_S3_PV_3",
+  "CT.S3.PV.5": "CT_S3_PV_5"
+}

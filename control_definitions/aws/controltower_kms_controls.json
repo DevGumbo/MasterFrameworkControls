@@ -1,0 +1,22 @@
+{
+  "service": "kms",
+  "controls": [
+    {
+      "control_id": "CT_KMS_PV_7",
+      "title": "Restrict AWS KMS usage to org IAM principals or AWS services",
+      "description": "KMS key policies should only allow access from organization principals",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "execute",
+        "parameters": {}
+      },
+      "standards": {
+        "control_tower": {
+          "control_id": "CT.KMS.PV.7",
+          "severity": "HIGH"
+        }
+      }
+    }
+  ]
+}

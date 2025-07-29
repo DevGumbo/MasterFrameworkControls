@@ -1,0 +1,233 @@
+{
+  "service": "cloudfront",
+  "controls": [
+    {
+      "control_id": "AWS_17D702",
+      "title": "CloudFront distributions should have a default root object configured",
+      "description": "This control checks whether an Amazon CloudFront distribution is configured to return a specific object that is the default root object. The control fails if the CloudFront distribution does not have a default root object configured.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.1",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_1E3C57",
+      "title": "CloudFront distributions should not use deprecated SSL protocols between edge locations and custom origins",
+      "description": "This control checks if CloudFront distributions are using deprecated SSL protocols for HTTPS communication between CloudFront edge locations and your custom origins. This control fails for a CloudFront distribution if it has a 'CustomOriginConfig' where \u2018OriginSslProtocols\u2019 includes \u2018SSLv3\u2019.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.10",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "S3_407A45",
+      "title": "CloudFront distributions should not point to non-existent S3 origins",
+      "description": "This control checks whether Amazon CloudFront distributions are pointing to non-existent S3 origins. The control fails for a CloudFront distribution if the origin is configured to point to a non-existent bucket. This control only applies to CloudFront distributions where an S3 bucket without static website hosting is the S3 origin.",
+      "severity": "HIGH",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.12",
+          "severity": "HIGH"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_C3C25B",
+      "title": "CloudFront distributions should use origin access control",
+      "description": "This control checks whether an Amazon CloudFront distribution with an Amazon S3 origin has origin access control (OAC) configured. The control fails if OAC isn't configured.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.13",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_E4E7DA",
+      "title": "CloudFront distributions should use the recommended TLS security policy",
+      "description": "This control checks whether an Amazon CloudFront distribution is configured to use the recommended TLS security policy. The control fails if the CloudFront distribution is not configured to use the recommended TLS security policy.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.15",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3A50DA",
+      "title": "CloudFront distributions should require encryption in transit",
+      "description": "This control checks whether an Amazon CloudFront distribution requires viewers to use HTTPS directly, or whether it uses redirection. The control fails if ViewerProtocolPolicy is set to allow-all for defaultCacheBehavior or for cacheBehaviors.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "in_transit",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.3",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_0D9944",
+      "title": "CloudFront distributions should have origin failover configured",
+      "description": "This control checks whether an Amazon CloudFront distribution is configured with an origin group that has 2 or more origins.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "ComplianceMonitoringInterrogator",
+        "method": "check_monitoring",
+        "parameters": {
+          "check_type": "aws_config_enabled"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.4",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D1E77D",
+      "title": "CloudFront distributions should have logging enabled",
+      "description": "This control checks to see if server access logging is enabled on Amazon CloudFront Distributions. The control will fail if access logging is not enabled for the distribution.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "LoggingConfigInterrogator",
+        "method": "check_logging",
+        "parameters": {}
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.5",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_D063F6",
+      "title": "CloudFront distributions should have WAF enabled",
+      "description": "This control checks to see if Amazon CloudFront distributions are associated with either WAF or WAFv2 web ACLs. The control fails if a CloudFront distribution is not associated with a web ACL.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "ServiceConfigInterrogator",
+        "method": "check_service_config",
+        "parameters": {
+          "check_type": "general"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.6",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_709525",
+      "title": "CloudFront distributions should use custom SSL/TLS certificates",
+      "description": "This control checks if CloudFront distributions are using the default SSL/TLS certificate CloudFront provides instead of a custom one. This control fails for a CloudFront distribution if it uses the default SSL/TLS certificate.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.7",
+          "severity": "MEDIUM"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_3C37A7",
+      "title": "CloudFront distributions should use SNI to serve HTTPS requests",
+      "description": "This control checks if Amazon CloudFront distributions are using a custom SSL/TLS certificate and are configured to use SNI to serve HTTPS requests as opposed to dedicated IP address.",
+      "severity": "LOW",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.8",
+          "severity": "LOW"
+        }
+      }
+    },
+    {
+      "control_id": "AWS_A4CE4C",
+      "title": "CloudFront distributions should encrypt traffic to custom origins",
+      "description": "This control checks if CloudFront distributions are encrypting traffic to custom origins. This control fails if \u2018OriginProtocolPolicy\u2019 is \u2018http-only\u2019 or if \u2018OriginProtocolPolicy\u2019 is \u2018match-viewer\u2019 and \u2018ViewerProtocolPolicy\u2019 is \u2018allow-all\u2019.",
+      "severity": "MEDIUM",
+      "interrogation": {
+        "class": "EncryptionConfigInterrogator",
+        "method": "check_encryption",
+        "parameters": {
+          "encryption_type": "both",
+          "key_type": "any"
+        }
+      },
+      "standards": {
+        "fsbp": {
+          "control_id": "CloudFront.9",
+          "severity": "MEDIUM"
+        }
+      }
+    }
+  ]
+}
